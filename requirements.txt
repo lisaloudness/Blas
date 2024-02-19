@@ -1,6 +1,6 @@
 blinker==1.7.0
 click==8.1.7
-dnspython==3.9.18
+dnspython==2.5.0
 Flask==3.0.2
 Flask-PyMongo==2.3.0
 itsdangerous==2.1.2
