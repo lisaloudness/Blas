@@ -9,9 +9,12 @@
     {% for recipe in recipes %}
     {{ recipe.recipe_name}}<br>
     {{ recipe.category_name }}<br>
-    {{ recipe.recipe_ingredients }}<br>
-    {{ recipe.recipe_method }}<br>
-    {{ recipe.like_button }}<br>
+    {{ recipe.serving }}<br>
+    {{ recipe.time }}<br>
+    {{ recipe.ingredients }}<br>
+    {{ recipe.method }}<br>
+    {{ recipe.like }}<br>
+    {{ recipe.total_likes }}<br>
     {% endfor %}
 </body>
 </html>
