@@ -14,10 +14,10 @@
 <body>
   <nav>
     <div class="nav-wrapper grey darken-4">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="{{ url_for('home') }}" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="#">Search Recipes</a></li>
         <li><a href="#">Sign Up</a></li>
         <li><a href="#">Log In</a></li>
@@ -26,10 +26,11 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
+    <li><h4 class="center-align">Blas</h4></li>
     <li><a href="#">Home</a></li>
-        <li><a href="#">Search Recipes</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Log In</a></li>
+    <li><a href="#">Search Recipes</a></li>
+    <li><a href="#">Sign Up</a></li>
+    <li><a href="#">Log In</a></li>
   </ul>
     <div class="section no-pad-bot" id="index-banner">
     <div class="container">
