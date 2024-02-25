@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- REGISTRATION CARD -->
+<div class="row">
+  <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+    <h3>Sign Up To Blas Cook Book</h3>
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+<!-- USERNAME FIELD -->
+        <div class="row">
+          <div class="input-field col s7 offset-m1">
+            <i class="fas fa-user-plus"></i>
+            <input id="username" name="username" type="text" class="validate">
+            <label for="username">Username</label>
+          </div>
+        </div>
+<!-- PASSWORD FIELD -->
+        <div class="row">
+          <div class="input-field col s7 offset-m1">
+            <i class="fa-regular fa-circle-user"></i>
+            <input id="password" name="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div>
+<!-- REGISTER BUTTON-->
+      <div class="row">
+        <button type="submit" class="col s12 btn-large light-grey">Register</button><i class="fas fa-sign-in-alt"></i>
+      </div>
+          <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+      </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
