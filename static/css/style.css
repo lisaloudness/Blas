@@ -13,5 +13,16 @@
     padding: 0 15px;
   }
   .icon-block .material-icons {
-      font-size: inherit;
+    font-size: inherit;
   }
+
+  .index-hero {
+    background: url(../images/index_hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+ 

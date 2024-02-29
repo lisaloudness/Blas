@@ -14,6 +14,7 @@
   <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 <body>
+<header>
   <nav>
     <div class="nav-wrapper grey darken-4">
       <a href="{{ url_for('home') }}" class="brand-logo">Logo</a>
@@ -34,8 +35,25 @@
     <li><a href="{{ url_for('register') }}">Sign Up</a></li>
     <li><a href="#">Log In</a></li>
   </ul>
+</header>
+
+<section>
+  <!-- flash messages -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="row flashes">
+          <h4 class="orange darken-3 center-align">{{ message }}</h4>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</section>
+
+<main class="container">
 {% block content%}
 {% endblock%}
+</main>
 
   <footer class="page-footer grey darken-4">
     <div class="container">
