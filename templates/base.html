@@ -20,21 +20,31 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="#">Search Recipes</a></li>
+      {% if session.user %}
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        <li><a href="#">Add Recipe</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="medium material-icons">account_circle</i></a></li>
+      {% else %}
         <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="medium material-icons">account_circle</i></a></li>
-      </ul>
+      {% endif %}
+        </ul>
     </div>
-  </nav>
+  </nav>  
 
   <ul class="sidenav" id="mobile-demo">
     <li><h4 class="center-align">Blas</h4></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
-    <li><a href="#">Search Recipes</a></li>
-    <li><a href="{{ url_for('register') }}">Sign Up</a></li>
-    <li><a href="{{ url_for('login') }}">Log In</a></li>
-    <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="medium material-icons">account_circle</i></a></li>
-  </ul>
+        <li><a href="#">Search Recipes</a></li>
+        {% if session.user %}
+          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          <li><a href="#">Add Recipe</a></li>
+          <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="medium material-icons">account_circle</i></a></li>
+        {% else %}
+          <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
+        {% endif %}
+        </ul>
 </header>
 
 <section class="flash-message">
