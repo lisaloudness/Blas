@@ -19,7 +19,7 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="#">Search Recipes</a></li>
+        <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
       {% if session.user %}
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li><a href="#">Add Recipe</a></li>
@@ -35,7 +35,7 @@
   <ul class="sidenav" id="mobile-demo">
     <li><h4 class="center-align">Blas</h4></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="#">Search Recipes</a></li>
+        <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
         {% if session.user %}
           <li><a href="{{ url_for('logout') }}">Log Out</a></li>
           <li><a href="#">Add Recipe</a></li>
@@ -80,8 +80,6 @@
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
@@ -89,8 +87,6 @@
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
         </div>
       </div>

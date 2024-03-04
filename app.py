@@ -16,6 +16,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+ 
 
 #--HOME PAGE--
 @app.route("/")
@@ -99,7 +100,6 @@ def logout():
 
 
 
-@app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
