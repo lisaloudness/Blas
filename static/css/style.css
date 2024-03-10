@@ -34,4 +34,15 @@
     height: 100vh;
   }
 
+  .login-hero {
+    background: url(../images/login_hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* Slider add recipe*/
+
  
