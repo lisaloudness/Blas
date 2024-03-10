@@ -7,7 +7,8 @@
 
 
   <form  method="POST" action="">
-    <div class="row">
+    <div class="row card-panel">
+      <div class="row">
       <div class="input-field col s5">
         <i class="material-icons prefix">poll</i>
         <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
@@ -15,32 +16,27 @@
         <label for="recipe_name">Recipe Name</label>
       </div>
     </div>
-  
-    <div class="row">
-      <div class="input-field col s3 m3 l3">
-        <i class="material-icons prefix">timer</i>
-          <input type="number" id="prep_time" name="prep_time" step="5" min="5" max="120">
-          <label for="prep_time">Preperation Time (minutes)</label>
-      </div>
-    </div>
-    <span>
       <div class="row">
+        <div class="input-field col s3">
+          <i class="material-icons prefix">timer</i>
+            <input type="number" id="prep_time" name="prep_time" step="5" min="5" max="120">
+              <label for="prep_time">Preperation Time (minutes)</label>
+        </div>
+    
         <div class="input-field col s3">
           <i class="material-icons prefix">timer</i>
           <input type="number" id="cook_time" name="cook_time" step="5" min="5" max="120">
           <label for="time">Cooking Time (minutes) </label>
         </div>
       </div>
-    </span>
+
       <div class="row">
         <div class="input-field col s2">
           <i class="material-icons prefix">sort</i>
           <input id="serves" name="serves" minlength="1" maxlength="2"
             type="number" class="validate" required>
           <label for="serves">Serves</label>
-        </div>
-      </div>
-      <div class="row">
+        </div> 
         <div class="input-field col s2">
           <i class="material-icons prefix">star</i>
           <input id="rating" name="rating" minlength="1" maxlength="2"
@@ -54,15 +50,15 @@
           <div class="collapsible-header">
         <div class="input-field col s6">
           <i class="material-icons prefix">poll</i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>  
-        <label for="icon_prefix2">Ingredients</label>
+          <textarea id="ingredients" class="materialize-textarea"></textarea>  
+        <label for="ingredients">Ingredients</label>
         </div>
       </div>
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
     </li>
       <li>
       <div class="collapsible-header">
-        
+         
         <div class="input-field col s6">
           <i class="material-icons prefix">poll</i>
           <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
@@ -76,6 +72,7 @@
     </ul>
 
     </div>
+  </div>
   </form>
 </div>
 
