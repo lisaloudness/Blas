@@ -3,21 +3,18 @@
 
 <div class="container fluid">
 <h3 class="header center orange-text">Add A New Recipe</h3>
-</div>
-
-
-  <form  method="POST" action="">
-    <div class="row card-panel">
+<form  method="POST" action="{{ url_for('add_recipes') }}">
+  <div class="row card-panel">
       <div class="row">
       <div class="input-field col s5">
         <i class="material-icons prefix">poll</i>
         <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
-          type="text" class="validate" required>
+          type="text" class="materialize-textarea validate" required>
         <label for="recipe_name">Recipe Name</label>
       </div>
       <div class="input-field col s3">
         <i class="material-icons prefix">poll</i>
-        <select id="category_name" name="category_name" class="validate" required>
+        <select id="category_name" name="category_name" class=" materialize-textarea validate" required>
           <option value="" disabled selected>Choose Category</option>
           {% for category in categories %}
             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
@@ -29,14 +26,14 @@
       <div class="row">
         <div class="input-field col s3">
           <i class="material-icons prefix">timer</i>
-            <input type="number" id="prep_time" name="prep_time" step="5" min="5" max="120">
+            <input class="materialize-textarea" type="number" id="prep_time" name="prep_time" step="5" min="5" max="120">
               <label for="prep_time">Preperation Time (minutes)</label>
         </div>
     
         <div class="input-field col s3">
           <i class="material-icons prefix">timer</i>
-          <input type="number" id="cook_time" name="cook_time" step="5" min="5" max="120">
-          <label for="time">Cooking Time (minutes) </label>
+          <input class="materialize-textarea" type="number" id="cook_time" name="cook_time" step="5" min="5" max="120">
+          <label for="cook_time">Cooking Time (minutes) </label>
         </div>
       </div>
 
@@ -44,45 +41,46 @@
         <div class="input-field col s2">
           <i class="material-icons prefix">sort</i>
           <input id="serves" name="serves" minlength="1" maxlength="2"
-            type="number" class="validate" required>
+            type="number" class=" materialize-textarea validate" required>
           <label for="serves">Serves</label>
         </div> 
         <div class="input-field col s2">
           <i class="material-icons prefix">star</i>
           <input id="rating" name="rating" minlength="1" maxlength="2"
-            type="number" class="validate" required>
+            type="number" class=" materialize-textarea validate" required>
           <label for="rating">Rating</label>
         </div>
       </div>
 
-      <ul class="collapsible">
-        <li>
-          <div class="collapsible-header">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">poll</i>
-          <textarea id="ingredients" class="materialize-textarea"></textarea>  
-        <label for="ingredients">Ingredients</label>
-        </div>
-      </div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-      <li>
-      <div class="collapsible-header">
-         
-        <div class="input-field col s6">
-          <i class="material-icons prefix">poll</i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-          <label for="icon_prefix2">Method</label>
-         
-        </div>
-      </div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-  
-    </ul>
+      
+      
 
+      
+      <h5 class="header orange-text">Add Ingredients</h5>
+      <div class="row">
+          <div class="input-field col s8">
+            <i class="material-icons prefix">poll</i>
+            <textarea id="ingredients" name="ingredients" type="text" class="materialize-textarea validate"></textarea>
+            <label class="active" for="ingredients">Please list seperate using comma,</label><br>
+          </div>
+        </div>
+  
+      <h5>Add Method</h5>
+      <div class="row">
+          <div class="input-field col s8">
+            <i class="material-icons prefix">receipt</i>
+            <textarea id="method" name="method" type="textarea" class="materialize-textarea validate"></textarea>
+            <label class="active" for="method"></label>
+          </div>
+      </div>
+    
+<!-- Add Recipe Button -->
+  <div class="row">
+    <div class="col s6 center-align">
+    <button type="submit" class="btn-large waves-effect waves-light orange">Add Recipe  <i class="fas fa-plus-square"></i></button>
     </div>
   </div>
+
   </form>
 </div>
 
