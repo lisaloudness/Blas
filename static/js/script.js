@@ -5,6 +5,7 @@ $(document).ready(function(){
     $('.carousel').carousel();                // Menu Carousel
     $('select').formSelect();
     $('.collapsible').collapsible();
+    $('.tooltipped').tooltip();
   });
 
 
