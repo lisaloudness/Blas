@@ -7,10 +7,37 @@
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
         <h3 class="center-align deep-orange-text text-darken-3">
-            {{ username }}'s Profile
+            {{ username }}'s Recipes
           </h3>
       </div>
     </div>
   </div>
 </div>
+<!-- displays users recipes -->
+<div class="row">
+  {% for recipe in recipes %}
+  <div class="col s12 m6 l3">
+      <div class="card">
+          <div class="card-content">
+              <a href="#modal-{{ recipe._id }}" class="modal-trigger">
+                  <span class="card-image">
+                      {% if recipe.image %}
+                      <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
+                      {% else %}
+                      <img src="{{ url_for('static', filename='images/placeholder.jpg') }}"
+                          alt="No recipe image available" class="responsive-img">
+                      {% endif %}
+                  </span>
+                  <span class="card-name">
+                      <h5>{{ recipe.name }}</h5>
+                  </span>
+              </a>
+                  <span class="created-by">
+                      <p> Recipe created by: {{ recipe.created_by }}</p>
+                  </span>
+          </div>
+      </div>
+  </div>
+  
+{% endfor %}
 {% endblock %}

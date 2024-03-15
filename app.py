@@ -82,13 +82,23 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    # Ensure the user is logged in
+    if 'user' not in session:
+        flash("You need to log in first")
+        return redirect(url_for("login"))
 
-    if session["user"]:
-        return render_template("profile.html", username=username)
-    
-    return redirect(url_for("login"))
+    # Get the username from the session
+    logged_in_user = session["user"]
+
+    # Check if the username in the URL matches the logged-in user
+    if username != logged_in_user:
+        flash("You can only view your own profile")
+        return redirect(url_for("home"))  # Or any other appropriate redirect
+
+    # Fetch the user's recipes from the database
+    user_recipes = mongo.db.recipes.find({"created_by": logged_in_user})
+
+    return render_template("profile.html", username=username, recipes=user_recipes)
 
 
 @app.route("/logout")
@@ -102,6 +112,12 @@ def logout():
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/recipes", methods=["GET"])
+def show_recipes():
+    recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
 
