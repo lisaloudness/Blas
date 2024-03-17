@@ -20,15 +20,17 @@
         </div>
     </div>
     {% for recipe in recipes %}
-    <div class="container-fluid">
         <div class="row">
-            <div class="col s12 m4">
-                <div class="card small">
-                    
+            <div class="col s12 m4 l3">
+                <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}" class="responsive-img">
+                        {% if recipe.image %}
+                        <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='images/blasheropng.png') }}"
+                          alt="No recipe image available" class="responsive-img">
+                        {% endif %}
                     </div>
-                    
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">more_vert</i></span>
                         <p><a href="#">View Recipe</a></p>
@@ -36,17 +38,16 @@
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
                         <p><i id="icon_left" class="material-icons left">poll</i><strong>Category:</strong> {{ recipe.category_name }}</p>
-                        <p><i id="icon_left" class="material-icons left">sort</i><strong>Serving:</strong> {{ recipe.serving }}</p>
-                        <p><i id="icon_left" class="material-icons left">timer</i><strong>Prep Time:</strong> {{ recipe.time }}</p>
-                        <p><i id="icon_left" class="material-icons left">timer</i><strong>Cooking Time:</strong> {{ recipe.cooking_time }}</p>
-                        <p><i id="icon_left" class="material-icons left">star</i><strong>Rating:</strong> {{ recipe.rating }}</p></p>
+                        <p><i id="icon_left" class="material-icons left">sort</i><strong>Serving:</strong> {{ recipe.serves }}</p>
+                        <p><i id="icon_left" class="material-icons left">timer</i><strong>Prep Time:</strong> {{ recipe.prep_time }}</p>
+                        <p><i id="icon_left" class="material-icons left">timer</i><strong>Cooking Time:</strong> {{ recipe.cook_time }}</p>
+                        <p><i id="icon_left" class="material-icons left">star</i><strong>Rating:</strong> {{ recipe.rating }}</p>
+                        <p><i id="icon_left" class="material-icons left">star</i><strong>ID:</strong> {{ recipe._id }}</p>
                         <p><em><strong>by: {{ recipe.created_by }}</strong></em></p>
-                        <a href="#" class="waves-effect waves-light btn-small"><i class="material-icons left">remove_red_eye</i>View Recipe</a><br><br>
-                        <a href="#" class="waves-effect waves-light btn-small"><i class="material-icons left">edit</i>Edit Recipe</a>
+                        <a href="{{ url_for('view_recipes', recipe_id=recipe._id) }}" class="waves-effect orange waves-light btn-small"><i class="material-icons left">remove_red_eye</i>View Recipe</a><br><br>
+                        <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="waves-effect orange waves-light btn-small"><i class="material-icons left">edit</i>Edit Recipe</a>
                     </div>
                 </div>
-            </div>
-         
         </div>    
     </div>
     {% endfor %} 

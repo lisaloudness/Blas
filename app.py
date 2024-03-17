@@ -130,6 +130,7 @@ def add_recipes():
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
             "serves": request.form.get("serves"),
+            "rating": request.form.get("rating"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
             "image": request.form.get("image"),
@@ -141,6 +142,18 @@ def add_recipes():
         
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipes.html", categories=categories)
+
+@app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
+def edit_recipes(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    return render_template("edit_recipes.html", recipe=recipe)
+
+@app.route("/view_recipes/<recipe_id>", methods=["GET"])
+def view_recipes(recipe_id):
+    recipe=mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("view_recipes.html", recipe=recipe)
+
 
 
 if __name__ == "__main__":

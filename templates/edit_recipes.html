@@ -2,8 +2,8 @@
 {% block content %}
 
 <div class="container fluid">
-<h3 class="header center orange-text">Add A New Recipe</h3>
-<form  method="POST" action="{{ url_for('add_recipes') }}">
+<h3 class="header center orange-text">Edit Recipe</h3>
+<form  method="POST" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}">
   <div class="row card-panel">
       <div class="row">
       <div class="input-field col s5">
@@ -26,13 +26,13 @@
       <div class="row">
         <div class="input-field col s3">
           <i class="material-icons prefix">timer</i>
-            <input class="materialize-textarea" type="text" id="prep_time" name="prep_time" min="5" max="120">
+            <input class="materialize-textarea" type="number" id="prep_time" name="prep_time" step="5" min="5" max="120">
               <label for="prep_time">Preperation Time (minutes)</label>
         </div>
     
         <div class="input-field col s3">
           <i class="material-icons prefix">timer</i>
-          <input class="materialize-textarea" type="text" id="cook_time" name="cook_time">
+          <input class="materialize-textarea" type="number" id="cook_time" name="cook_time" step="5" min="5" max="120">
           <label for="cook_time">Cooking Time (minutes) </label>
         </div>
       </div>
@@ -41,13 +41,13 @@
         <div class="input-field col s2">
           <i class="material-icons prefix">sort</i>
           <input id="serves" name="serves" minlength="1" maxlength="2"
-            type="text" class="materialize-textarea validate" required>  
+            type="number" class=" materialize-textarea validate" required>
           <label for="serves">Serves</label>
         </div> 
         <div class="input-field col s2">
           <i class="material-icons prefix">star</i>
           <input id="rating" name="rating" minlength="1" maxlength="2"
-            type="text" class="materialize-textarea validate" required>
+            type="number" class=" materialize-textarea validate" required>
           <label for="rating">Rating</label>
         </div>
       </div>
@@ -87,7 +87,7 @@
 <!-- Add Recipe Button -->
   <div class="row">
     <div class="col s6 center-align">
-    <button type="submit" class="btn-large waves-effect waves-light orange">Add Recipe  <i class="fas fa-plus-square"></i></button>
+    <button type="submit" class="btn-large waves-effect waves-light orange">Edit Recipe  <i class="fas fa-plus-square"></i></button>
     </div>
   </div>
 

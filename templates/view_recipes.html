@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+ 
+<div class="container-fluid">
+    <h3 class="header center teal-text text-lighten-2">{{ recipe.name }}</h3><br>
+    <h5 class="header center black-text text-lighten-2">{{ recipe.description }}</h5>
+</div><br><br>
+
+
+
+
+<div class="container">
+<div class="row">
+
+<div class="col s12 m6 l6">                  
+            {% if recipe.image %}
+                        <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='images/blasheropng.png') }}"
+                          alt="No recipe image available" class="responsive-img">
+                        {% endif %}
+</div>
+
+
+
+{% endblock %}

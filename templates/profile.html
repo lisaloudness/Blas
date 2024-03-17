@@ -24,12 +24,12 @@
                       {% if recipe.image %}
                       <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
                       {% else %}
-                      <img src="{{ url_for('static', filename='images/placeholder.jpg') }}"
+                      <img src="{{ url_for('static', filename='images/blasheropng.png') }}"
                           alt="No recipe image available" class="responsive-img">
                       {% endif %}
                   </span>
                   <span class="card-name">
-                      <h5>{{ recipe.name }}</h5>
+                      <h5>{{ recipe.recipe_name }}</h5>
                   </span>
               </a>
                   <span class="created-by">
