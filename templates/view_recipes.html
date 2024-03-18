@@ -3,9 +3,10 @@
  
 <div class="container-fluid">
     <h3 class="header center teal-text text-lighten-2">{{ recipe.name }}</h3><br>
-    <h5 class="header center black-text text-lighten-2">{{ recipe.description }}</h5>
 </div><br><br>
-
+<div class="row center">
+  <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="btn-floating tooltipped data-position="bottom" data-tooltip="Edit This Recipe" btn-large waves-effect waves-orange"><i class="material-icons">edit</i></a>
+</div> 
 
 
 
