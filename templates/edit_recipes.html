@@ -184,9 +184,14 @@
                           data-tooltip="You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here"></i>
                   </label>
               </div>
-              <!-- Add Recipe Button -->
+
+
+              <!-- Edit Recipe Button -->
   <div class="row">
     <div class="col s6 center-align">
+      <a href="{{ url_for('get_recipes') }}" class="btn large red text-shadow">Cancel
+        <i class="fas fa-times-circle right"></i>
+      </a>
     <button type="submit" class="btn-large waves-effect waves-light orange">Edit Recipe  <i class="fas fa-plus-square"></i></button>
     </div>
   </div>
