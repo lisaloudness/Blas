@@ -163,9 +163,42 @@ def add_recipes():
 
 @app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
 def edit_recipes(recipe_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "prep_time": request.form.get("prep_time"),
+            "cook_time": request.form.get("cook_time"),
+            "serves": request.form.get("serves"),
+            "rating": request.form.get("rating"),
+            "ingredient_1": request.form.get("ingredient_1"),
+            "ingredient_2": request.form.get("ingredient_2"),
+            "ingredient_3": request.form.get("ingredient_3"),
+            "ingredient_4": request.form.get("ingredient_4"),
+            "ingredient_5": request.form.get("ingredient_5"),
+            "ingredient_6": request.form.get("ingredient_6"),
+            "ingredient_7": request.form.get("ingredient_7"),
+            "ingredient_8": request.form.get("ingredient_8"),
+            "ingredient_9": request.form.get("ingredient_9"),
+            "ingredient_10": request.form.get("ingredient_10"),
+            "method_1": request.form.get("method_1"),
+            "method_2": request.form.get("method_2"),
+            "method_3": request.form.get("method_3"),
+            "method_4": request.form.get("method_4"),
+            "method_5": request.form.get("method_5"),
+            "method_6": request.form.get("method_6"),
+            "method_7": request.form.get("method_7"),
+            "method_8": request.form.get("method_8"),
+            "method_9": request.form.get("method_9"),
+            "method_10": request.form.get("method_10"),
+            "image": request.form.get("image"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {"$set": submit})
+        flash("Recipe Successfully Updated")
+        
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    flash("Recipe Successfully Updated")
     return render_template("edit_recipes.html", recipe=recipe, categories=categories)
 
 @app.route("/view_recipes/<recipe_id>", methods=["GET"])
