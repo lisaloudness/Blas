@@ -6,6 +6,7 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
+    $('ul.tabs').tabs();
   });
 
 

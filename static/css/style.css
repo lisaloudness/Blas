@@ -43,6 +43,24 @@
     height: 100vh;
   }
 
-  /* Slider add recipe*/
+  .tabs .tab a {
+    color: #f9660af3;
+    background-color: transparent;
+} /*colour of text*/
+    
+.tabs .tab a.active {
+    background-color: transparent;
+    color: #f9660af3;
+    outline: none;
+} /*Background and text color when a tab is active*/
+
+.tabs .tab a:hover {
+    background-color: transparent;
+    color: #f9660af3;
+} /*Background and text color on hover*/
+
+.tabs .indicator {
+    background-color: #f9660af3;
+} /*Color of underline*/
 
  

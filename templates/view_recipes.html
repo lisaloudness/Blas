@@ -2,14 +2,14 @@
 {% block content %}
  
 <div class="container-fluid">
-    <h3 class="header center orange-text">{{ recipe.recipe_name }}</h3><br>
-</div><br><br>
-<div class="row center">
-  <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="btn-floating tooltipped data-position="bottom" data-tooltip="Edit This Recipe" btn-large waves-effect waves-orange"><i class="material-icons">edit</i></a>
-</div> 
+    <h3 class="header center orange-text">{{ recipe.recipe_name }}
+      {% if session.user|lower == recipe.created_by|lower %}
+      <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="btn-floating tooltipped data-position="bottom" data-tooltip="Edit This Recipe" btn-large waves-effect waves-orange><i class="material-icons orange">edit</i></a>
+      {% endif %}
+    </h3>
+<br><br> 
 <div class="container">
   <div class="row">
-  
   <div class="col s12 m6 l6">                  
               {% if recipe.image %}
                           <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
@@ -20,13 +20,11 @@
   </div>
   
 <div class="col s12 offset-s3 m6 offset-m4 l6">
-  <blockquote><strong>Category:</strong> {{ recipe.category }}</blockquote>
+  <blockquote><strong>Category:</strong> {{ recipe.category_name }}</blockquote>
   <blockquote><strong>Prep Time:</strong> {{ recipe.prep_time }}</blockquote>
   <blockquote><strong>Cooking Time:</strong> {{ recipe.cook_time }}</blockquote>
-  <i id="rating_icon" class="material-icons">stars</i>
-  <strong>Difficulty Rating:</strong> {{ recipe.rating }}<br><br>
-  <strong>Serves:</strong> {{ recipe.serves }}
-  
+  <blockquote><strong>Difficulty Rating:</strong> {{ recipe.rating }}</blockquote>
+  <blockquote><strong>Serves:</strong> {{ recipe.serves }}</blockquote>
 </div>
 </div><br><br>  
 
@@ -42,12 +40,7 @@
 <blockquote><strong>Ingredients:</strong></blockquote> 
   
   <table>
-    <thead>
-     
-      <tr id="table_border">
-        <th>Ingredient Name</th>
-      </tr>
-    </thead>
+    
 
     <tbody>
       <tr id="table_border" class="col s12">
