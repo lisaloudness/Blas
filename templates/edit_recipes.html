@@ -2,67 +2,60 @@
 {% block content %}
 
 <div class="container fluid">
-<h3 class="header center orange-text">Edit Recipe</h3>
-<form  method="POST" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}">
-  <div class="row card-panel">
-    <div class="row">
-      <div class="input-field col s6">
-        <i class="material-icons prefix">poll</i>
-        <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
-          type="text" class="materialize-textarea validate" value="{{ recipe.recipe_name }}" required>
-        <label for="recipe_name">Recipe Name</label>
-      </div>
-      <div class="input-field col s6">
-        <i class="material-icons prefix">poll</i>
-        <select id="category_name" name="category_name" class="materialize-textarea validate" required>
-          <option value="" disabled>Choose Category</option>
-          {% for category in categories %}
-            {% if category.category_name == recipe.category_name %}
+  <h3 class="header center orange-text">Edit Recipe</h3>
+  <form  method="POST" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}">
+    <div class="row card-panel">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">poll</i>
+          <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
+            type="text" class="materialize-textarea validate" value="{{ recipe.recipe_name }}" required>
+          <label for="recipe_name">Recipe Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">poll</i>
+          <select id="category_name" name="category_name" class="materialize-textarea validate" required>
+            <option value="" disabled>Choose Category</option>
+            {% for category in categories %}
+              {% if category.category_name == recipe.category_name %}
               <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-            {% else %}
+              {% else %}
               <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-            {% endif %}
-          {% endfor %}
-        </select>
-        <label for="category_name">Category</label>
+              {% endif %}
+            {% endfor %}
+          </select>
+            <label for="category_name">Category</label>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6 m3 l3">
-        <i class="material-icons prefix">timer</i>
-          <input class="materialize-textarea" type="text" id="prep_time" name="prep_time" min="5" max="120" value="{{ recipe.prep_time }}">
-            <label for="prep_time">Preperation Time (minutes)</label>
-      </div>
-  
-      <div class="input-field col s6 m3 l3">
-        <i class="material-icons prefix">timer</i>
-        <input class="materialize-textarea" type="text" id="cook_time" name="cook_time" value="{{ recipe.cook_time }}">
-        <label for="cook_time">Cooking Time (minutes) </label>
-      </div>
-      <div class="input-field col s6 m3 l3">
-        <i class="material-icons prefix">sort</i>
-        <input id="serves" name="serves" minlength="1" maxlength="2"
-          type="text" class="materialize-textarea validate" value="{{ recipe.serves }}"required>  
-        <label for="serves">Serves</label>
-      </div> 
-      <div class="input-field col s6 m3 l3">
-        <i class="material-icons prefix">star</i>
-        <input id="rating" name="rating" minlength="1" maxlength="2"
-          type="text" class="materialize-textarea validate" value="{{ recipe.rating }}"required>
-        <label for="rating">Rating</label>
-      </div>
-    </div><br>
+      <div class="row">
+        <div class="input-field col s6 m3 l3">
+          <i class="material-icons prefix">timer</i>
+            <input class="materialize-textarea" type="text" id="prep_time" name="prep_time" min="5" max="120" value="{{ recipe.prep_time }}">
+              <label for="prep_time">Preperation Time (minutes)</label>
+        </div>
+        <div class="input-field col s6 m3 l3">
+          <i class="material-icons prefix">timer</i>
+          <input class="materialize-textarea" type="text" id="cook_time" name="cook_time" value="{{ recipe.cook_time }}">
+          <label for="cook_time">Cooking Time (minutes) </label>
+        </div>
+        <div class="input-field col s6 m3 l3">
+          <i class="material-icons prefix">sort</i>
+          <input id="serves" name="serves" minlength="1" maxlength="2"
+            type="text" class="materialize-textarea validate" value="{{ recipe.serves }}"required>  
+          <label for="serves">Serves</label>
+        </div> 
+        <div class="input-field col s6 m3 l3">
+          <i class="material-icons prefix">star</i>
+          <input id="rating" name="rating" minlength="1" maxlength="2"
+            type="text" class="materialize-textarea validate" value="{{ recipe.rating }}"required>
+          <label for="rating">Rating</label>
+        </div>
+      </div><br>
 
-
-    
-    
-
-    
-        <div class="container-fluid" id="edit_container">
+      <div class="container-fluid" id="edit_container">
         <div class="row">
           <h5><i class="material-icons prefix" id="container_icon">receipt</i> Ingredients</h5><br>  
         </div>
-        
         <div class="row">
           <div class="input-field col s12 m3 l3">
             <input id="ingredient_1" name="ingredient_1" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_1 }}">
@@ -72,9 +65,6 @@
             <input id="ingredient_2" name="ingredient_2" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_2 }}">
             <label for="ingredient_2">Ingredient 2</label>
           </div>
-        
-        
-        
           <div class="input-field col s12 m3 l3">
             <input id="ingredient_3" name="ingredient_3" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_3 }}">
             <label for="ingredient_3">Ingredient 3</label>
@@ -83,9 +73,6 @@
             <input id="ingredient_4" name="ingredient_4" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_4 }}">
             <label for="ingredient_4">Ingredient 4</label>
           </div>
-        
-        
-        
           <div class="input-field col s12 m3 l3">
             <input id="ingredient_5" name="ingredient_5" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_5 }}">
             <label for="ingredient_5">Ingredient 5</label>
@@ -94,9 +81,6 @@
             <input id="ingredient_6" name="ingredient_6" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_6 }}">
             <label for="ingredient_6">Ingredient 6</label>
           </div>
-        
-        
-        
           <div class="input-field col s12 m3 l3">
             <input id="ingredient_7" name="ingredient_7" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_7 }}">
             <label for="ingredient_7">Ingredient 7</label>
@@ -105,9 +89,6 @@
             <input id="ingredient_8" name="ingredient_8" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_8 }}">
             <label for="ingredient_8">Ingredient 8</label>
           </div>
-        
-        
-     
           <div class="input-field col s12 m3 l3">
             <input id="ingredient_9" name="ingredient_9" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_9 }}">
             <label for="ingredient_9">Ingredient 9</label>
@@ -116,93 +97,78 @@
             <input id="ingredient_10" name="ingredient_10" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_10 }}">
             <label for="ingredient_10">Ingredient 10</label>
           </div>
-        
-        
-      </div><br>
-  
+        </div><br>
+      </div>
       <div class="container-fluid" id="edit_container">
-      <h5><i class="material-icons prefix" id="container_icon">receipt</i> Method</h5><br>
-    <div class="row">
-      <div class="input-field col s12 m6 l6">
-        <input id="method_1" name="method_1" type="text" class="materialize-textarea validate" value="{{ recipe.method_1 }}">
-        <label for="method_1">Step 1</label>
+        <h5><i class="material-icons prefix" id="container_icon">receipt</i> Method</h5><br>
+        <div class="row">
+          <div class="input-field col s12 m6 l6">
+            <input id="method_1" name="method_1" type="text" class="materialize-textarea validate" value="{{ recipe.method_1 }}">
+            <label for="method_1">Step 1</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+          <input id="method_2" name="method_2" type="text" class="materialize-textarea validate" value="{{ recipe.method_2 }}">
+          <label for="method_2">Step 2</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="method_3" name="method_3" type="text" class="materialize-textarea validate" value="{{ recipe.method_3 }}">
+            <label for="method_3">Step 3</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="method_4" name="method_4" type="text" class="materialize-textarea validate" value="{{ recipe.method_4 }}">
+            <label for="method_4">Step 4</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="method_5" name="method_5" type="text" class="materialize-textarea validate" value="{{ recipe.method_5 }}">
+            <label for="method_5">Step 5</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="method_6" name="method_6" type="text" class="materialize-textarea validate" value="{{ recipe.method_6 }}">
+            <label for="method_6">Step 6</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="method_7" name="method_7" type="text" class="materialize-textarea validate" value="{{ recipe.method_7 }}">
+            <label for="method_7">Step 7</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="method_8" name="method_8" type="text" class="materialize-textarea validate" value="{{ recipe.method_8 }}">
+            <label for="method_8">Step 8</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="method_9" name="method_9" type="text" class="materialize-textarea validate" value="{{ recipe.method_9 }}">
+            <label for="method_9">Step 9</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="method_10" name="method_10" type="text" class="materialize-textarea validate" value="{{ recipe.method_10 }}">
+            <label for="method_10">Step 10</label>
+          </div>
+        </div>
+      </div><br>
+        <!-- recipe url input field-->
+      <div class="input-field col s12">
+        <i class="far fa-images prefix"></i>
+          <input id="image" name="image" alt="Recipe Image" class="responsive-img" type="url" pattern="https://.*" size="30" value="{{ recipe.image }}" validate>
+            <label for="image">Recipe Image URL
+              <i class="fas fa-question-circle tooltipped" data-position="top"
+                data-tooltip="You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here"></i>
+            </label>
       </div>
-    
-      <div class="input-field col s12 m6 l6">
-        <input id="method_2" name="method_2" type="text" class="materialize-textarea validate" value="{{ recipe.method_2 }}">
-        <label for="method_2">Step 2</label>
-      </div>
-    
-      <div class="input-field col s12 m6 l6">
-        <input id="method_3" name="method_3" type="text" class="materialize-textarea validate" value="{{ recipe.method_3 }}">
-        <label for="method_3">Step 3</label>
-      </div>
-   
-      <div class="input-field col s12 m6 l6">
-        <input id="method_4" name="method_4" type="text" class="materialize-textarea validate" value="{{ recipe.method_4 }}">
-        <label for="method_4">Step 4</label>
-      </div>
-    
-      <div class="input-field col s12 m6 l6">
-        <input id="method_5" name="method_5" type="text" class="materialize-textarea validate" value="{{ recipe.method_5 }}">
-        <label for="method_5">Step 5</label>
-      </div>
-    
-      <div class="input-field col s12 m6 l6">
-        <input id="method_6" name="method_6" type="text" class="materialize-textarea validate" value="{{ recipe.method_6 }}">
-        <label for="method_6">Step 6</label>
-      </div>
-    
-      <div class="input-field col s12 m6 l6">
-        <input id="method_7" name="method_7" type="text" class="materialize-textarea validate" value="{{ recipe.method_7 }}">
-        <label for="method_7">Step 7</label>
-      </div>
-    
-      <div class="input-field col s12 m6 l6">
-        <input id="method_8" name="method_8" type="text" class="materialize-textarea validate" value="{{ recipe.method_8 }}">
-        <label for="method_8">Step 8</label>
-      </div>
-    
-      <div class="input-field col s12 m6 l6">
-        <input id="method_9" name="method_9" type="text" class="materialize-textarea validate" value="{{ recipe.method_9 }}">
-        <label for="method_9">Step 9</label>
-      </div>
-    
-      <div class="input-field col s12 m6 l6">
-        <input id="method_10" name="method_10" type="text" class="materialize-textarea validate" value="{{ recipe.method_10 }}">
-        <label for="method_10">Step 10</label>
-      </div>
-    </div>
-    
-  </div><br>
-              <!-- recipe url input field-->
-              <div class="input-field col s12">
-                  <i class="far fa-images prefix"></i>
-                  <input id="image" name="image" alt="Recipe Image" class="responsive-img" type="url" pattern="https://.*" size="30" value="{{ recipe.image }}" validate>
-                  <label for="image">Recipe Image URL
-                      <i class="fas fa-question-circle tooltipped" data-position="top"
-                          data-tooltip="You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here"></i>
-                  </label>
-              </div>
 
 
-              <!-- Edit Recipe Button -->
   <div class="row">
-    <div class="col s6 center-align">
-      <a href="{{ url_for('get_recipes') }}" class="btn large red text-shadow">Cancel
-        <i class="fas fa-times-circle right"></i>
+    <div class="col s6">
+              
+<!-- Back to previous page Button -->
+      <a href="#" class="btn-large red text-shadow" onclick="history.back()">Back
+        <i class="fa-solid fa-circle-left right"></i>
       </a>
+      <!-- Edit Recipe Button -->
     <button type="submit" class="btn-large waves-effect waves-light orange">Edit Recipe  <i class="fas fa-plus-square"></i></button>
     </div>
   </div>
 
 
-</div>
+    </div>
   </form>
 </div>
-
-
-
-
-
 {% endblock %}

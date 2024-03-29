@@ -1,13 +1,15 @@
-.text-shadow {
-    text-shadow: 2px 2px 2px(rgba 5,5,5,5);
-}
 /* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+
+ .text-shadow {
+  text-shadow: 2px 2px 2px(rgba 5,5,5,5);
+}
+
+ #logo {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+ }
 
  .icon-block {
     padding: 0 15px;
@@ -43,24 +45,32 @@
     height: 100vh;
   }
 
+  /*colour of text*/
   .tabs .tab a {
     color: #f9660af3;
     background-color: transparent;
-} /*colour of text*/
-    
+} 
+    /*Background and text color when a tab is active*/
 .tabs .tab a.active {
     background-color: transparent;
     color: #f9660af3;
     outline: none;
-} /*Background and text color when a tab is active*/
-
+} 
+/*Background and text color on hover*/
 .tabs .tab a:hover {
     background-color: transparent;
     color: #f9660af3;
-} /*Background and text color on hover*/
-
+} 
+ /*Color of underline*/
 .tabs .indicator {
     background-color: #f9660af3;
-} /*Color of underline*/
+}
 
+/*Footer Social Links*/
+.social li {
+  font-size: 200%;
+  margin: 5px;
+  padding: 2%;
+  display: inline-block;
+}
  

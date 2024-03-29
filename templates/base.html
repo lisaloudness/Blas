@@ -8,19 +8,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Engagement&family=Pacifico&display=swap" rel="stylesheet">
   {% block styles %}
   {% endblock %}
   <title>Blas</title>
   </head>
 <body>
 <header>
+  <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper grey darken-4">
-      <a href="{{ url_for('home') }}" class="brand-logo">Logo</a>
+      <a href="{{ url_for('home') }}" class="brand-logo" id="logo">Blas</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
+        <li ><a href="{{ url_for('home') }}">Home</a></li>
+        <li class="active"><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
       {% if session.user %}
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
@@ -29,10 +33,10 @@
         <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
       {% endif %}
-        </ul>
+      </ul>
     </div>
   </nav>  
-
+</div>
   <ul class="sidenav" id="mobile-demo">
     <li><h4 class="center-align">Blas</h4></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -70,33 +74,20 @@
   <footer class="page-footer grey darken-4">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
           <h5 class="white-text">Blas Ethos</h5>
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-          </ul>
-        </div>
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div>
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
+        <div class="row center">
+          <ul class="social">
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <p>Website created for educational purposes only</p>
+        </div>
+    </div>   
+  
   </footer>
 
 

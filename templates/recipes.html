@@ -3,7 +3,7 @@
 
 
     <div class="container-fluid">
-        <h1 class="header center orange-text">List of Recipes</h1>
+        <h1 class="header center orange-text">Browse The Cookbook</h1>
     </div>
     <div class="container-fluid">
         <div class="row">
@@ -19,8 +19,9 @@
             </div>
         </div>
     </div>
-    {% for recipe in recipes %}
+    
         <div class="row">
+            {% for recipe in recipes %}
             <div class="col s12 m4 l3">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
@@ -42,7 +43,6 @@
                         <p><i id="icon_left" class="material-icons left">timer</i><strong>Prep Time:</strong> {{ recipe.prep_time }}</p>
                         <p><i id="icon_left" class="material-icons left">timer</i><strong>Cooking Time:</strong> {{ recipe.cook_time }}</p>
                         <p><i id="icon_left" class="material-icons left">star</i><strong>Rating:</strong> {{ recipe.rating }}</p>
-                        <p><i id="icon_left" class="material-icons left">star</i><strong>ID:</strong> {{ recipe._id }}</p>
                         <p><em><strong>by: {{ recipe.created_by }}</strong></em></p>
                         <a href="{{ url_for('view_recipes', recipe_id=recipe._id) }}" class="waves-effect orange waves-light btn-small"><i class="material-icons left">remove_red_eye</i>View Recipe</a><br><br>
                         {% if session.user|lower == recipe.created_by|lower %}
@@ -51,9 +51,9 @@
                     </div>
                 </div>
         </div>    
-    </div>
+    
     {% endfor %} 
-
+        </div>
               
 {% endblock %}
 </body>
