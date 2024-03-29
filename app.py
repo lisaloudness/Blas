@@ -207,6 +207,23 @@ def view_recipes(recipe_id):
     return render_template("view_recipes.html", recipe=recipe)
 
 
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    # Retrieve the recipe from the database
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    # Check if the recipe exists
+    if recipe:
+        # Check if the logged-in user matches the creator of the recipe
+        if session.get('user') == recipe.get('created_by'):
+            # Delete the recipe if the user is the creator
+            mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+            flash("Recipe Successfully Deleted")
+
+    # Redirect to the profile page regardless of the outcome
+    return redirect(url_for("profile", username=session["user"]))
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

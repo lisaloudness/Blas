@@ -25,7 +25,10 @@
                         <img src="{{ url_for('static', filename='images/blasheropng.png') }}"
                           alt="No recipe image available" class="responsive-img">
                         {% endif %}
-                    </div>
+                        <span>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn tooltipped orange right" data-position="bottom" data-tooltip="Delete Recipe"><i class="small fas fa-trash prefix white-text right"></i></a>
+                      </span>
+                      </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">more_vert</i></span>
                         <p><a href="{{ url_for('view_recipes', recipe_id=recipe._id) }}">View Recipe</a></p>
