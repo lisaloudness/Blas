@@ -3,15 +3,16 @@
 
 
     <div class="container-fluid">
-        <h1 class="header center orange-text">Browse The Cookbook</h1>
+        <h1 class="header center orange-text">Blas Cookbook</h1>
+        <p class="center orange-text">Browse the recipes or search for an ingredient.</p>
     </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col s12 m6 offset-m3 l4 offset-l4">
                 <div class="searchbox">
-                    <form method="POST">
-                        <input name="search" type="text" class="center" placeholder="What are you looking for?">
-                        <button id="search" value="search" name="action" type="submit" method="POST" class="btn-floating">
+                    <form method="POST" action="{{ url_for('search') }}">
+                        <input name="query" type="text" class="center" placeholder="What are you looking for?">
+                        <button id="query" value="query" name="action" type="submit" method="POST" class="btn-floating">
                         <i class="material-icons orange">search</i>
                         </button>
                     </form>
@@ -23,7 +24,7 @@
         <div class="row">
             {% for recipe in recipes %}
             <div class="col s12 m4 l3">
-                <div class="card">
+                <div class="card hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
                         {% if recipe.image %}
                         <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">

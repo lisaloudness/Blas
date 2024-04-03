@@ -7,6 +7,8 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
     $('ul.tabs').tabs();
+    $('#textarea1').val('New Text');
+   
   });
 
 

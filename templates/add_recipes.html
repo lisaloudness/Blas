@@ -4,7 +4,7 @@
 <div class="container fluid">
 <h3 class="header center orange-text">Add A New Recipe</h3>
 <form  method="POST" action="{{ url_for('add_recipes') }}">
-  <div class="row card-panel">
+  <div class="row card-panel" id="edit_container">
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">poll</i>
@@ -26,13 +26,13 @@
         <div class="input-field col s6 m3 l3">
           <i class="material-icons prefix">timer</i>
             <input class="materialize-textarea" type="text" id="prep_time" name="prep_time" min="5" max="120">
-              <label for="prep_time">Preperation Time (minutes)</label>
+              <label for="prep_time">Prep Time</label>
         </div>
     
         <div class="input-field col s6 m3 l3">
           <i class="material-icons prefix">timer</i>
           <input class="materialize-textarea" type="text" id="cook_time" name="cook_time">
-          <label for="cook_time">Cooking Time (minutes) </label>
+          <label for="cook_time">Cook Time</label>
         </div>
         <div class="input-field col s6 m3 l3">
           <i class="material-icons prefix">sort</i>
@@ -48,12 +48,7 @@
         </div>
       </div><br>
   
-
-      
-      
-
-      
-          <div class="container-fluid" id="edit_container">
+          <div class="container-fluid">
           <div class="row">
             <h5><i class="material-icons prefix" id="container_icon">receipt</i> Ingredients</h5><br>  
           </div>
@@ -115,11 +110,11 @@
           
         </div><br>
     
-        <div class="container-fluid" id="edit_container">
+        <div class="container-fluid">
         <h5><i class="material-icons prefix" id="container_icon">receipt</i> Method</h5><br>
       <div class="row">
-        <div class="input-field col s12 m6 l6">
-          <input id="" name="method_1" type="text" class="materialize-textarea validate">
+        <div class="input-field col s12 m12 l12">
+          <input id="method_1" name="method_1" type="text" class="materialize-textarea validate">
           <label for="method_1">Step 1</label>
         </div>
       

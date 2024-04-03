@@ -66,6 +66,19 @@
     background-color: #f9660af3;
 }
 
+
+#table_border {
+border-bottom-color: #f29950;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+}
+
+#edit_container{
+background-color: #fbb066;
+padding:50px;
+border-radius: 2%;
+}
+
 /*Footer Social Links*/
 .social li {
   font-size: 200%;
@@ -73,4 +86,4 @@
   padding: 2%;
   display: inline-block;
 }
- 
+
