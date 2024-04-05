@@ -4,7 +4,7 @@
 <div class="container fluid">
   <h3 class="header center orange-text">Edit Recipe</h3>
   <form  method="POST" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}">
-    <div class="row card-panel">
+    <div class="row card-panel" id="edit_container">
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">poll</i>
@@ -135,12 +135,6 @@
       <blockquote><strong>Method:</strong></blockquote>
       
         <table class="striped">
-          <thead>
-            <tr>
-              <th></th>
-            </tr>
-          </thead>
-      
           <tbody>
             <tr>
               <td><strong>Step 1: </strong><br>
@@ -150,25 +144,25 @@
             </tr>
             <tr>
               <td><strong>Step 2: </strong><br>
-                <input id="method_2" name="method_2" type="text" class="materialize-textarea validate" value="{{ recipe.method_1 }}">
+                <input id="method_2" name="method_2" type="text" class="materialize-textarea validate" value="{{ recipe.method_2 }}">
                 <label for="method_2"></label>
               </td>
             </tr>
             <tr>
               <td><strong>Step 3: </strong><br>
-                <input id="method_3" name="method_3" type="text" class="materialize-textarea validate" value="{{ recipe.method_1 }}">
+                <input id="method_3" name="method_3" type="text" class="materialize-textarea validate" value="{{ recipe.method_3 }}">
                 <label for="method_3"></label>
               </td>
             </tr>
             <tr>
               <td><strong>Step 4: </strong><br>
-                <input id="method_4" name="method_4" type="text" class="materialize-textarea validate" value="{{ recipe.method_1 }}">
+                <input id="method_4" name="method_4" type="text" class="materialize-textarea validate" value="{{ recipe.method_4 }}">
                 <label for="method_4"></label>
               </td>
             </tr>
             <tr>
               <td><strong>Step 5: </strong><br>
-                <input id="method_5" name="method_5" type="text" class="materialize-textarea validate" value="{{ recipe.method_1 }}">
+                <input id="method_5" name="method_5" type="text" class="materialize-textarea validate" value="{{ recipe.method_5 }}">
                 <label for="method_5"></label>
               </td>
             </tr>

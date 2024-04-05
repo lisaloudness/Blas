@@ -28,7 +28,7 @@
       {% if session.user %}
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
-        <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="medium material-icons">account_circle</i></a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}"><i class="medium material-icons">account_circle</i></a></li>
       {% else %}
         <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -38,13 +38,13 @@
   </nav>  
 </div>
   <ul class="sidenav" id="mobile-demo">
-    <li><h4 class="center-align">Blas</h4></li>
+    <li><h4 class="center-align" href="{{ url_for('home') }}">Blas</h4></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
         {% if session.user %}
           <li><a href="{{ url_for('logout') }}">Log Out</a></li>
           <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
-          <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+          <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}">Profile</a>
         {% else %}
           <li><a href="{{ url_for('register') }}">Sign Up</a></li>
           <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -73,21 +73,16 @@
 
   <footer class="page-footer grey darken-4">
     <div class="container">
-      <div class="row">
-          <h5 class="white-text">Blas Ethos</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+      <div class="row center">
+        <ul class="social">
+          <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+          <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+          <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      <p>Website created for educational purposes only</p>
       </div>
-        <div class="row center">
-          <ul class="social">
-            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-            <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
-            <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
-            <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-        <p>Website created for educational purposes only</p>
-        </div>
     </div>   
-  
   </footer>
 
 
