@@ -44,11 +44,14 @@
           </div> 
           <div class="input-field col s6 m3 l3">
             <i class="material-icons prefix">star</i>
-              <input id="rating" name="rating" minlength="1" maxlength="2"
-                type="text" class="materialize-textarea validate" required>
-                <label for="rating">Rating</label>
+            <select id="difficulty_level" name="difficulty_level" class="materialize-textarea validate" required>
+              <option value="" disabled selected>Difficulty</option>
+              {% for difficult in difficulty %}
+              <option value="{{ difficult.difficulty_level }}">{{ difficult.difficulty_level }}</option>
+              {% endfor %}
+            </select>
           </div>
-        </div><br>
+        </div>
 
         <div class="row">
           <div class="col s12 m12 l12">
