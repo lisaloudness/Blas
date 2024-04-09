@@ -50,6 +50,19 @@ When the project’s initial planning began, informal discussions were held with
 
 The following shows the basic set-up of the MongoDB database, which is hosted on the cloud-based Mlab DaaS:
 
+### Wireframes / Mockups:
+
+- User Flowchart - [View](/static/images/readme/data_flow.png)
+- Home Page Wireframe - [View](/static/images/readme/home_wire.png)
+- Register Page Wireframe - [View](/)
+- Sign In Page Wireframe - [View](/)
+- Search Page Wireframe - [View](/static/images/readme/search_wire.png)
+- Search Results Page Wireframe - [View](/)
+- Profile Page Wireframe - [View]()
+- Add/Edit Page Wireframe - [View]()
+
+
+
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
