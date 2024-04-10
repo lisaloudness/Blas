@@ -53,18 +53,18 @@
         </ul>
 </header>
 
-<section class="flash-message">
+<div class="flash-message">
   <!-- flash messages -->
   {% with messages = get_flashed_messages() %}
     {% if messages %}
       {% for message in messages %}
         <div class="row flashes">
-          <h4 class="orange darken-3 center-align">{{ message }}</h4>
+          <h4 class="orange center-align">{{ message }}</h4>
         </div>
       {% endfor %}
     {% endif %}
   {% endwith %}
-</section>
+      </div>
     
 
 <main>
@@ -73,7 +73,7 @@
 </main>
 
   <footer class="page-footer grey darken-4">
-    <div class="container">
+    <div class="container ">
       <div class="row center">
         <ul class="social">
           <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
