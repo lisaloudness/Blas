@@ -11,34 +11,6 @@
   </div>
 </div>
 
-
-
-    <!--   Icon Section   -->
-    <div class="container-fluid">
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center orange-text"><i class="fa fa-eye" aria-hidden="true"></i></h2>
-          <h5 class="center">View Recipes</h5>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center orange-text"><i class="fas fa-edit"></i></h2>
-          <h5 class="center">Edit Recipes</h5>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center orange-text"><i class="fa fa-trash" aria-hidden="true"></i></h2>
-          <h5 class="center">Delete Recipes</h5>
-        </div>
-      </div>
-  </div>
-
-
 <!-- displays users recipes -->
   {% for recipe in recipes %}
     <div class="row">
@@ -78,4 +50,30 @@
          
     {% endfor %}
   </div> 
+
+    <!--   Icon Section   -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center orange-text"><i class="fa fa-eye" aria-hidden="true"></i></h2>
+            <h5 class="center">View Recipes</h5>
+          </div>
+        </div>
+  
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center orange-text"><i class="fas fa-edit"></i></h2>
+            <h5 class="center">Edit Recipes</h5>
+          </div>
+        </div>
+  
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center orange-text"><i class="fa fa-trash" aria-hidden="true"></i></h2>
+            <h5 class="center">Delete Recipes</h5>
+          </div>
+        </div>
+    </div>
+  
 {% endblock %}

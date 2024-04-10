@@ -8,12 +8,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col s12 m6 offset-m3 l4 offset-l4">
-                <div class="searchbox">
+                <div class="searchbox center">
                     <form method="POST" action="{{ url_for('search') }}">
-                        <input name="query" type="text" class="center" placeholder="What are you looking for?">
                         <button id="query" value="query" name="action" type="submit" method="POST" class="btn-floating">
-                        <i class="material-icons orange">search</i>
-                        </button>
+                            <i class="material-icons orange prefix">search</i>
+                            </button>
+                        <input name="query" type="text" class="center" placeholder="What are you looking for?">
+                        
+                    
                     </form>
                 </div>
             </div>
