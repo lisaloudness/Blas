@@ -4,6 +4,12 @@
   text-shadow: 2px 2px 2px(rgba 5,5,5,5);
 }
 
+/* Flash messages*/
+
+.flashes h4 {
+  line-height: 1;
+}
+
  #logo {
   font-family: "Pacifico", cursive;
   font-weight: 400;
@@ -17,6 +23,10 @@
   .icon-block .material-icons {
     font-size: inherit;
   }
+
+  .input-field [type=text] {
+    color: white;
+}
 
   .index-hero {
     background: url(../images/index_hero.jpg);

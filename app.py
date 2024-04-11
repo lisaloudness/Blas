@@ -118,6 +118,18 @@ def get_recipes():
 @app.route("/search", methods=["GET`", "POST"])
 def search():
     query = request.form.get("query")
+            # Store the query in the session
+    session['last_query'] = query
+        # Perform the search and get the results
+    results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+
+    # If no results are found, display a flash message
+    if not results and query:
+        flash(
+            "No results found for '{}' Please try another search".format(
+                query))
+
+
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
 
@@ -138,7 +150,7 @@ def add_recipes():
             "cook_time": request.form.get("cook_time"),
             "serves": request.form.get("serves"),
             "difficulty_level": request.form.get("difficulty_level"),
-            "ingredient_0": request.form.get("ingredient_0"),
+            
             "ingredient_1": request.form.get("ingredient_1"),
             "ingredient_2": request.form.get("ingredient_2"),
             "ingredient_3": request.form.get("ingredient_3"),
@@ -170,6 +182,7 @@ def add_recipes():
     difficulty = mongo.db.difficulty.find().sort("difficulty_level",1)
     return render_template("add_recipes.html", categories=categories, difficulty=difficulty)
 
+
 @app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
 def edit_recipes(recipe_id):
     if request.method == "POST":
@@ -179,8 +192,8 @@ def edit_recipes(recipe_id):
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
             "serves": request.form.get("serves"),
-            "rating": request.form.get("rating"),
-            "ingredient_0": request.form.get("ingredient_0"),
+            "difficulty_level": request.form.get("difficulty_level"),
+            
             "ingredient_1": request.form.get("ingredient_1"),
             "ingredient_2": request.form.get("ingredient_2"),
             "ingredient_3": request.form.get("ingredient_3"),
@@ -210,6 +223,7 @@ def edit_recipes(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipes.html", recipe=recipe, categories=categories)
+
 
 @app.route("/view_recipes/<recipe_id>", methods=["GET"])
 def view_recipes(recipe_id):

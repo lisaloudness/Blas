@@ -5,7 +5,7 @@
   <h3 class="header center orange-text">Add A New Recipe</h3>
     <form  method="POST" action="{{ url_for('add_recipes') }}">
       <div class="row card-panel" id="edit_container">
-
+<!-- Recipe name input field -->
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">poll</i>
@@ -13,6 +13,7 @@
               type="text" class="materialize-textarea validate" required>
                 <label for="recipe_name">Recipe Name</label>
           </div>
+          <!-- Choose category field input -->
           <div class="input-field col s6">
             <i class="material-icons prefix">poll</i>
               <select id="category_name" name="category_name" class=" materialize-textarea validate" required>
@@ -52,27 +53,46 @@
             </select>
           </div>
         </div>
-
+<!-- INGREDIENTS AND METHOD TAB -->
         <div class="row">
           <div class="col s12 m12 l12">
             <ul class="tabs">
-              <li class="tab col s6 m6 l6"><a href="#tab1" id="btn">Add Ingredients</a></li>
-              <li class="tab col s6 m6 l6"><a class="active" href="#tab2">Method</a></li>
+              <li class="tab col s6 m6 l6"><a href="#tab1">Add Ingredients</a></li>
+              <li class="tab col s6 m6 l6"><a href="#tab2">Method</a></li>
             </ul>
           </div>
-          
+          <div id=”tab1”>
             <table>
               <tbody>
                 <tr id="table_border" class="col s12">
                   <td>
-                    <div id="ip_div">
-                      <!--   <label for="ingredient_1"></label>
-                  <input type="number" id="ingredient_1" name="ingredient_1" placeholder="ingredient_1">
-                  <label for="num2">num2:</label>
-                  <input type="number" id="num2" name="num2" placeholder="num2"> -->
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">local_dining</i>
+                      <input type="text" id="ingredient_1" name="ingredient_1">
+                      <label for="ingredient_1">Ingredient 1</label>
                     </div>
-                  </td>
-                  
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">local_dining</i>
+                      <input type="text" id="ingredient_2" name="ingredient_2">
+                      <label for="ingredient_2">Ingredient 2</label>
+                    </div>
+                    
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">local_dining</i>
+                        <input type="text" id="ingredient_3" name="ingredient_3">
+                        <label for="ingredient_3">Ingredient 3</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">local_dining</i>
+                        <input type="text" id="ingredient_4" name="ingredient_4">
+                        <label for="ingredient_4">Ingredient 4</label>
+                      </div>
+                      <!-- THIS ID WILL LINK TO JS FUNCTION TO DYNAMICALLY POPULATE  -->
+                    <div id="ip_div">
+                    </div>
+                    <a class="btn-floating btn-small waves-effect waves-light red tooltipped" id="btn" data-tooltip="add ingredient"><i class="material-icons">add</i></a>
+                      </td>
+                </tr>
               </tbody>
             </table>
         </div>
@@ -156,5 +176,5 @@
 
 
 
-
 {% endblock %}
+

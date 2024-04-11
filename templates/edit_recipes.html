@@ -44,16 +44,19 @@
             type="text" class="materialize-textarea validate" value="{{ recipe.serves }}"required>  
           <label for="serves">Serves</label>
         </div> 
-        <div class="input-field col s6 m3 l3">
-          <i class="material-icons prefix">star</i>
           <div class="input-field col s6 m3 l3">
             <i class="material-icons prefix">star</i>
-            <select id="difficulty_level" name="difficulty_level" class="materialize-textarea validate" required>
-              <option value="" disabled selected>Difficulty</option>
+            <select id="difficulty_level" name="difficulty_level" class="materialize-textarea validate">
+              <option value="" disabled>Difficulty</option>
               {% for difficult in difficulty %}
+                {% if difficult.difficulty_level == recipe.difficulty_level %}
+                <option value="{{ difficult.difficulty_level }}"selected>{{ difficult.difficulty_level }}</option>
+                {% else %}
               <option value="{{ difficult.difficulty_level }}">{{ difficult.difficulty_level }}</option>
+                {% endif %}
               {% endfor %}
             </select>
+            <label for="difficulty_level">Difficulty</label>
         </div>
       </div><br>
 
@@ -72,12 +75,6 @@
             
         
             <tbody>
-              <tr id="table_border" class="col s12">
-                <td>
-                  <input id="ingredient_0" name="ingredient_0" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_0 }}">
-                  <label for="ingredient_0"></label>
-                </td>
-              </tr>
               <tr id="table_border" class="col s12">
                 <td>
                   <input id="ingredient_1" name="ingredient_1" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_1 }}">

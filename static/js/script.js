@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 //Dynamic create ingredient field on add_recipe form
 $(document).ready(function () {
-  var ingredient_ = 0; // initialize to 0
+  var ingredient_ = 4; // initialize to 0
 
   var createInputs = function () {
       ingredient_++; // Increment on each click
