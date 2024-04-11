@@ -7,7 +7,7 @@
         <h3 class="center-align orange-text text-darken-3">
             Welcome To Your Recipe Dashboard
           </h3>
-          <p class="strong center white-text"><strong>Here you can view, edit and delete recipes you have added to Blas</strong></p>
+          <p class="strong center white-text"><strong>You can view, edit and delete recipes you have added to Blas</strong></p>
   </div>
 </div>
 
@@ -17,12 +17,12 @@
             <div class="col s12 m4 l3">
                 <div class="card hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
-                        {% if recipe.image %}
+                        {%- if recipe.image -%}
                         <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
-                        {% else %}
+                        {%- else -%}
                         <img src="{{ url_for('static', filename='images/blasheropng.png') }}"
                           alt="No recipe image available" class="responsive-img">
-                        {% endif %}
+                        {%- endif -%}
                         
                       </div>
                     <div class="card-content">
@@ -41,9 +41,9 @@
                         <p><i id="icon_left" class="material-icons left">star</i><strong>Rating:</strong> {{ recipe.rating }}</p>
                         <p><em><strong>by: {{ recipe.created_by }}</strong></em></p>
                         <a href="{{ url_for('view_recipes', recipe_id=recipe._id) }}" class="waves-effect orange waves-light btn-small"><i class="material-icons left">remove_red_eye</i>View Recipe</a><br><br>
-                        {% if session.user|lower == recipe.created_by|lower %}
+                        {%- if session.user|lower == recipe.created_by|lower -%}
                         <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="waves-effect orange waves-light btn-small"><i class="material-icons left">edit</i>Edit Recipe</a>
-                        {% endif %}
+                        {%- endif -%}
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block content %}
+{%- extends "base.html" -%}
+{%- block content -%}
 <div class="grey darken-4">
 <div class="container fluid">
   <h3 class="header center orange-text">Add A New Recipe</h3>
@@ -18,9 +18,9 @@
             <i class="material-icons prefix">poll</i>
               <select id="category_name" name="category_name" class=" materialize-textarea validate" required>
                 <option value="" disabled selected>Choose Category</option>
-                {% for category in categories %}
+                {%- for category in categories -%}
                 <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                {% endfor %}
+                {%- endfor -%}
               </select label="category_name">
           </div>
         </div>
@@ -47,9 +47,9 @@
             <i class="material-icons prefix">star</i>
             <select id="difficulty_level" name="difficulty_level" class="materialize-textarea validate" required>
               <option value="" disabled selected>Difficulty</option>
-              {% for difficult in difficulty %}
+              {%- for difficult in difficulty -%}
               <option value="{{ difficult.difficulty_level }}">{{ difficult.difficulty_level }}</option>
-              {% endfor %}
+              {%- endfor -%}
             </select>
           </div>
         </div>
@@ -176,5 +176,5 @@
 
 
 </div>
-{% endblock %}
+{%- endblock -%}
 

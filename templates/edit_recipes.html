@@ -5,6 +5,14 @@
   <h3 class="header center orange-text">Edit Recipe</h3>
   <form  method="POST" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}">
     <div class="row card-panel" id="edit_container">
+      <div class="row" id="recipe_css_image">
+        {% if recipe.image %}
+          <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img" id="recipe_css_image">
+        {% else %}
+          <img src="{{ url_for('static', filename='images/blasheropng.png') }}"
+            alt="No recipe image available" class="responsive-img">
+        {% endif %}
+      </div>
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">poll</i>

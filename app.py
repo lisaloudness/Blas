@@ -10,6 +10,8 @@ if os.path.exists("env.py"):
 
 
 app = Flask(__name__)
+app.jinja_env.lstrip_blocks = True
+app.jinja_env.trim_blocks = True
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -63,8 +65,6 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
                         return redirect(url_for(
                             "profile", username=session["user"]))
             else:
@@ -90,11 +90,6 @@ def profile(username):
     # Get the username from the session
     logged_in_user = session["user"]
 
-    # Check if the username in the URL matches the logged-in user
-    if username != logged_in_user:
-        flash("You can only view your own profile")
-        return redirect(url_for("home"))  # Or any other appropriate redirect
-
     # Fetch the user's recipes from the database
     user_recipes = mongo.db.recipes.find({"created_by": logged_in_user})
 
@@ -104,7 +99,6 @@ def profile(username):
 @app.route("/logout")
 def logout():
     #remove user from session cookies
-    flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
