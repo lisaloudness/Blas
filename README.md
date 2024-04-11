@@ -2,7 +2,14 @@
 
 ## Basic Recipe Book
 
-This is a basic online recipe book for various users.  Features include viewing, editing and adding recipes - additional features may be added in the future.  The full application can be viewed <a href="https://basic-recipe-book.herokuapp.com/" target="_blank" >here</a>.
+This is a basic online recipe book for various users.  Features include viewing, editing and adding recipes - additional features may be added in the future.  
+
+This website was designed to be a basic online recipe book that display recipes for all who like to cook. The focus of the site is to allow users to upload recipes and images for other users to search and use.
+
+This is the third of four Portfolio Projects that the developer must complete during their Full Stack Software Development Program at The Code Institute.
+
+The main requirements were to build a Non-Relational Database backed Flask project for a web application that allows users to store and manipulate data records about a particular domain. The focus of this project is on data rather than any business logic. This also requires the developer to create functionality for users to create, locate, display, edit and delete records (CRUD functionality).
+The full application can be viewed <a href="https://basic-recipe-book.herokuapp.com/" target="_blank" >here</a>.
  
 ## UX
 
