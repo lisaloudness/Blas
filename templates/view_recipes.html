@@ -12,7 +12,7 @@
   <div class="row">
   <div class="col s12 m6 l6">                  
               {% if recipe.image %}
-                          <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
+                          <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img" id="recipe_css_image">
                           {% else %}
                           <img src="{{ url_for('static', filename='images/blasheropng.png') }}"
                             alt="No recipe image available" class="responsive-img">

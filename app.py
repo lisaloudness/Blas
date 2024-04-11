@@ -123,9 +123,15 @@ def search():
         # Perform the search and get the results
     results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
 
-    # If no results are found, display a flash message
-    if not results and query:
+    if results and query:
         flash(
+            "Search results for '{}'".format(
+                query))
+
+    else:
+    # If no results are found, display a flash message
+        if not results and query:
+            flash(
             "No results found for '{}' Please try another search".format(
                 query))
 

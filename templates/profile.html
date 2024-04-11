@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="grey darken-4">
 <!-- PROFILE CARD -->
 <div class="row">
   <div class="col s12 m8 offset-m2">
-        <h3 class="center-align deep-orange-text text-darken-3">
-            {{ username }} Manage Your Recipes Here.
+        <h3 class="center-align orange-text text-darken-3">
+            Welcome To Your Recipe Dashboard
           </h3>
-          <p></p>
+          <p class="strong center white-text"><strong>Here you can view, edit and delete recipes you have added to Blas</strong></p>
   </div>
 </div>
 
@@ -49,6 +49,7 @@
             </div>
          
     {% endfor %}
+  
   </div> 
 
     <!--   Icon Section   -->
@@ -57,23 +58,23 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="fa fa-eye" aria-hidden="true"></i></h2>
-            <h5 class="center">View Recipes</h5>
+            <h5 class="center white-text">View Recipes</h5>
           </div>
         </div>
   
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="fas fa-edit"></i></h2>
-            <h5 class="center">Edit Recipes</h5>
+            <h5 class="center white-text">Edit Recipes</h5>
           </div>
         </div>
   
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="fa fa-trash" aria-hidden="true"></i></h2>
-            <h5 class="center">Delete Recipes</h5>
+            <h5 class="center white-text">Delete Recipes</h5>
           </div>
         </div>
     </div>
-  
+ </div> 
 {% endblock %}
