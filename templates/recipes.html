@@ -3,9 +3,10 @@
 
 <div class="grey darken-4">
     <div class="container-fluid">
-        
+        <br>
         <h6 class="center orange-text"><strong>Browse the recipes or search for an ingredient.</strong></h6>
     </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col s12 m6 offset-m3 l4 offset-l4">
@@ -13,10 +14,8 @@
                     <form method="POST" action="{{ url_for('search') }}">
                         <button id="query" value="query" name="action" type="submit" method="POST" class="btn-floating">
                             <i class="material-icons orange prefix">search</i>
-                            </button>
-                        <input name="query" type="text" class="center" placeholder="What are you looking for?">
-                        
-                    
+                        </button>
+                            <input name="query" type="text" class="center" placeholder="What are you looking for?">
                     </form>
                 </div>
             </div>
@@ -26,7 +25,7 @@
         <div class="row">
             {% for recipe in recipes %}
             <div class="col s12 m4 l3">
-                <div class="card hoverable">
+                <div class="card small">
                     <div class="card-image waves-effect waves-block waves-light">
                         {% if recipe.image %}
                         <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
@@ -45,7 +44,7 @@
                         <p><i id="icon_left" class="material-icons left">sort</i><strong>Serving:</strong> {{ recipe.serves }}</p>
                         <p><i id="icon_left" class="material-icons left">timer</i><strong>Prep Time:</strong> {{ recipe.prep_time }}</p>
                         <p><i id="icon_left" class="material-icons left">timer</i><strong>Cooking Time:</strong> {{ recipe.cook_time }}</p>
-                        <p><i id="icon_left" class="material-icons left">star</i><strong>Rating:</strong> {{ recipe.rating }}</p>
+                        <p><i id="icon_left" class="material-icons left">star</i><strong>Difficulty:</strong> {{ recipe.rating }}</p>
                         <p><em><strong>by: {{ recipe.created_by }}</strong></em></p>
                         <a href="{{ url_for('view_recipes', recipe_id=recipe._id) }}" class="waves-effect orange waves-light btn-small"><i class="material-icons left">remove_red_eye</i>View Recipe</a><br><br>
                         {% if session.user|lower == recipe.created_by|lower %}
@@ -53,11 +52,10 @@
                         {% endif %}
                     </div>
                 </div>
-        </div>    
-    
-    {% endfor %} 
+            </div>    
+            {% endfor %}
         </div>
-    </div>           
+</div>   
+
+
 {% endblock %}
-</body>
-</html>

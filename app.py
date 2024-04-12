@@ -8,6 +8,18 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
+class CustomFlask(Flask):
+
+    jinja_options = Flask.jinja_options.copy()
+    jinja_options.update(dict(
+        trim_blocks=True,
+        lstrip_blocks=True
+    ))
+
+
+def create_app():
+
+    app = CustomFlask(__name__)
 
 app = Flask(__name__)
 app.jinja_env.lstrip_blocks = True

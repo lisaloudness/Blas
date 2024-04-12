@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="grey darken-4 center-align">
+<div class="grey darken-4">
 <div class="container-fluid">
   <div class="row card-panel" id="view_container">
-    <a class="left-align" href="#" onclick="history.go(-1)">Go Back</a>
+    <a class="center-align" href="#" onclick="history.go(-1)">Go Back</a>
     <h3 class="header center orange-text">{{ recipe.recipe_name }}
         {% if session.user|lower == recipe.created_by|lower %}
         <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="orange btn-floating tooltipped" data-position="bottom" data-tooltip="Edit Recipe"><i class="material-icons orange">edit</i></a>

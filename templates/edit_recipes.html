@@ -2,6 +2,7 @@
 {% block content %}
 <div class="grey darken-4">
 <div class="container fluid">
+  <br>
   <h3 class="header center orange-text">Edit Recipe</h3>
   <form  method="POST" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}">
     <div class="row card-panel" id="edit_container">
@@ -70,11 +71,11 @@
 
       <div class="row">
         <div class="col s12 m12 l12">
-        <ul class="tabs">
-        <li class="tab col s6 m6 l6"><a href="#tab1">Ingredients</a></li>
-        <li class="tab col s6 m6 l6"><a class="active" href="#tab2">Method</a></li>
-        </ul>
-        </div>
+          <ul class="tabs">
+            <li class="tab col s6 m6 l6"><a href="#tab1">Ingredients</a></li>
+            <li class="tab col s6 m6 l6"><a href="#tab2">Method</a></li>
+          </ul>
+      </div>
         
         <div id="tab1" class="col s12">
         <blockquote><strong>Ingredients:</strong></blockquote> 
@@ -137,8 +138,8 @@
                   <label for="ingredient_9"></label>
                 </td>
               </tr>
-              </tbody>
-              </table>
+            </tbody>
+          </table>
         
       </div>
       <div id="tab2" class="col s12">
@@ -211,6 +212,9 @@
 
     </div>
   </form>
+  <br>
 </div>
 </div>
+
+
 {% endblock %}

@@ -18,7 +18,7 @@
   </head>
 <body>
 <header>
-  <div class="navbar-fixed">
+  <div class="navbar-fixed" class="border_nav">
   <nav>
     <div class="nav-wrapper grey darken-4">
       <a href="{{ url_for('home') }}" class="brand-logo" id="logo">Blas</a>
@@ -38,7 +38,7 @@
     </div>
   </nav>  
 </div>
-  <ul class="sidenav" id="mobile-demo">
+  <ul class="sidenav" id="mobile-demo" class="border_nav">
     <li><h4 class="center-align" href="{{ url_for('home') }}">Blas</h4></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
@@ -59,6 +59,7 @@
     {% if messages %}
       {% for message in messages %}
         <div class="row flashes">
+          <div class="col s12 l7 offset-l5">
           <h4 class="orange center-align">{{ message }}</h4>
         </div>
       {% endfor %}

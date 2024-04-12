@@ -1,45 +1,46 @@
 {% extends "base.html" %}
+
 {% block content %}
 
 <div class="login-hero">
 <!-- REGISTRATION CARD -->
-<div class="row">
-  <form class="col s12 offset-s4 m6 offset-m4" method="POST" action="{{ url_for('register') }}">
-    
-      <div class="white-text">
-<!-- USERNAME FIELD -->
-        <div class="row">
-          <div class="input-field col s7 offset-m1">
-            <i class="fas fa-user-plus prefix"></i>
-            <input id="username" name="username" type="text" minlength="5"
-            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-            <label for="username">Username  (min 5 characters)</label>
-          </div>
-        </div>
-<!-- PASSWORD FIELD -->
-        <div class="row">
-          <div class="input-field col s7 offset-m1">
-            <i class="fas fa-user-lock prefix"></i>
-            <input id="password" name="password" type="password" minlength="5"
-              maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-            <label for="password">Password  (min 5 characters)</label>
-          </div>
-        </div>
-<!-- REGISTER BUTTON-->
-      <div class="row">
-        <button type="submit" class="col s7 offset-m1 btn-large waves-effect waves-light orange">Register <i class="fas fa-sign-in-alt"></i></button>
-      </div>
-   
-  </form>
-</div>
+  <div class="container fluid center-align">
+    <div class="row orange-text strong-text">
+    <h6> New Here? Please sign up to manage your recipes</h6>
+    </div>
 
-<div class="row">
-  <div class="col s12 m6 offset-m3">
-    <p class="center-align orange-text strong-text">
-        Already Registered? 
-        <a href="{{ url_for('login') }}" class="white-text text-darken-4 strong-text">Log In</a>
-    </p>
+    <form method="POST" action="{{ url_for('register') }}">
+  <!-- USERNAME FIELD -->
+          <div class="row white-text">
+            <div class="input-field col s6 offset-s3">
+              <i class="fas fa-user-plus prefix"></i>
+                <input id="username" name="username" type="text" minlength="5"
+                  maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                <label for="username">Username  (min 5 characters)</label>
+            </div>
+          </div>
+  <!-- PASSWORD FIELD -->
+          <div class="row white-text">
+            <div class="input-field col s6 offset-s3">
+              <i class="fas fa-user-lock prefix"></i>
+                <input id="password" name="password" type="password" minlength="5"
+                  maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                <label for="password">Password  (min 5 characters)</label>
+            </div>
+          </div>
+  <!-- REGISTER BUTTON-->
+        <div class="row">
+          <button type="submit" class="col s6 offset-s3 btn-large waves-effect waves-light orange">Register <i class="fas fa-sign-in-alt"></i></button>
+        </div>
+    </form>
+
+    <div class="row">
+      <p class="center-align orange-text strong-text">
+            Already Registered? 
+            <a href="{{ url_for('login') }}" class="white-text text-darken-4 strong-text">Log In</a>
+      </p>
+    </div>
   </div>
 </div>
-</div>
-{% endblock %}
+
+{%- endblock -%}
