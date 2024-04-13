@@ -123,27 +123,24 @@ def get_recipes():
 
 @app.route("/search", methods=["GET`", "POST"])
 def search():
-    query = request.form.get("query")
+    if request.method == "POST":
+        query = request.form.get("query")
             # Store the query in the session
-    session['last_query'] = query
+        session['last_query'] = query
         # Perform the search and get the results
-    results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+        results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    else: # if search is empty retrieve all recipes
+        results = list(mongo.db.recipes.find())
 
-    if results and query:
-        flash(
-            "Search results for '{}'".format(
-                query))
-
-    else:
     # If no results are found, display a flash message
-        if not results and query:
+    if not results and query:
             flash(
             "No results found for '{}' Please try another search".format(
                 query))
 
 
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("recipes.html", recipes=recipes, query=query)
 
 
 @app.route("/recipes", methods=["GET"])

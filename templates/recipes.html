@@ -15,8 +15,15 @@
                         <button id="query" value="query" name="action" type="submit" method="POST" class="btn-floating">
                             <i class="material-icons orange prefix">search</i>
                         </button>
-                            <input name="query" type="text" class="center" placeholder="What are you looking for?">
-                    </form>
+                            <input name="query" type="text" class="center" placeholder="What are you looking for?" value="{{ query }}" reqiured>
+                            <!-- Reset button to clear the search query -->
+                    {% if query %}
+                    <a href="{{ url_for('get_recipes') }}" class="btn-small orange">
+                        Show All Recipes
+                    </a>
+                {% endif %}
+
+                        </form>
                 </div>
             </div>
         </div>
