@@ -257,6 +257,12 @@ def delete_recipe(recipe_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
+@app.route("/admin.html")
+def admin():
+    recipes = mongo.db.recipes.find()
+    return render_template("admin.html", recipes=recipes)
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

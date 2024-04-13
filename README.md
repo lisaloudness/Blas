@@ -91,7 +91,7 @@ Ideally, User Registration would be used on such an application for the CRUD ope
 
 Full form validation would also be required to prevent users from ommiting required data.
 
-Another issue noted is the fact that if a user wishes to add a New Category / Cuisine Type / Main Ingredient, then they must do so before they begin adding/editing current attributes of a recipe (as the page will refresh and any new/amended data will not be committed to the database)
+Admin functionality would be a key value pair using, for example, a toggle switch for is_admin? or is_superuser therefore potentionally allowing more than one admin or superuser and not being reliant on an unique username.
 
 When the responsiveness was tested on certain phones, the "Get Started" button on the Index page would not be displayed.
 
