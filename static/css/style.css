@@ -169,6 +169,8 @@ margin: auto;
   #index-text {
     margin-top: 35vh;
     font-size: 20px;
-}
+  }
 
+  #view_container {
+    padding: 0px;
 }
