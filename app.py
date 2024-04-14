@@ -231,6 +231,7 @@ def edit_recipes(recipe_id):
         
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
+    difficulty = mongo.db.difficulty.find().sort("difficulty_level",1)
     return render_template("edit_recipes.html", recipe=recipe, categories=categories)
 
 

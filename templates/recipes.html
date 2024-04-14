@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="grey darken-4">
-    <div class="container-fluid">
+    <div class="container-fluid center">
         <br>
         <h6 class="center orange-text"><strong>Browse the recipes or search for an ingredient.</strong></h6>
     </div>
@@ -32,7 +32,7 @@
         <div class="row">
             {% for recipe in recipes %}
             <div class="col s12 m4 l3">
-                <div class="card small">
+                <div class="card medium">
                     <div class="card-image waves-effect waves-block waves-light">
                         {% if recipe.image %}
                         <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">

@@ -1,5 +1,8 @@
 /* Custom Stylesheet */
 
+body {
+  background-color: #212121;
+}
  .text-shadow {
   text-shadow: 2px 2px 2px(rgba 5,5,5,5);
 }
@@ -136,11 +139,14 @@ margin: auto;
 }
 
 .social ul {
-  margin: 0px;
+  
+  margin-top: 15px;
 }
 .social li {
   font-size: 200%;
   padding: 2%;
   display: inline-block;
 }
-
+ .social {
+  margin-top: 0px;
+ }
