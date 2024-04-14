@@ -1,26 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="index-hero">
-  <div class="container">
-    <br>
+  <br>
+  <div class="container" id="index-text">
+    <div class="col s12">
       <h1 class="header center orange-text" id="logo">Blas</h1>
-        <div class="row center">
-          <p class="col s10 offset-s2 orange-text flow-text">Save, Share and Organize 
-            your favourite recipes online!</p>
-        </div>
-        <div class="row center">
-          <a href="{{ url_for('get_recipes') }}" class="btn-large waves-effect waves-light orange">Get Cooking!</a>
-        </div>
+        <p class="orange-text flow-text center">Save, Share and Organize 
+          your favourite recipes online!</p>
+    </div>
   </div>
+    <div class="row center">
+      <a href="{{ url_for('get_recipes') }}" class="btn-large waves-effect waves-light orange">Get Cooking!</a>
+    </div>
+ 
     <br>
 
-  <div class="row">
-    <div class="col s12">
-      <p class="center-align orange-text strong-text">
-        New Here? <a href="{{ url_for('register') }}" class="white-text text-darken-4 strong-text">Sign Up</a>
-      </p>
+    <div class="row">
+      <div class="col s12">
+        <p class="center-align orange-text strong-text">
+          New Here? <a href="{{ url_for('register') }}" class="white-text text-darken-4 strong-text">Sign Up</a>
+        </p>
+      </div>
     </div>
-  </div>     
+      
 </div>
 
 {% endblock %}

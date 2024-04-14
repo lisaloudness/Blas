@@ -56,8 +56,9 @@
           <div class="input-field col s6 m3 l3">
             <i class="material-icons prefix">star</i>
             <select id="difficulty_level" name="difficulty_level" class="materialize-textarea validate">
-              <option value="" disabled>Difficulty</option>
               {% for difficult in difficulty %}
+              <option value="" disabled>Difficulty</option>
+              
                 {% if difficult.difficulty_level == recipe.difficulty_level %}
                 <option value="{{ difficult.difficulty_level }}"selected>{{ difficult.difficulty_level }}</option>
                 {% else %}

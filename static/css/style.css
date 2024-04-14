@@ -38,6 +38,11 @@ h6 {
     color: white;
 }
 
+  #index-text {
+    margin-top: 20vh;
+    
+}
+
   .index-hero {
     background: url(../images/index_hero.jpg);
     background-repeat: no-repeat;
@@ -62,9 +67,14 @@ h6 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: local;
     width: 100vw;
     height: 100vh;
+  }
+
+  #login-form {
+    margin-top: auto;
+    padding-top: 150px;
   }
 
   /*colour of text*/
@@ -120,9 +130,16 @@ margin: auto;
  }
  
 /*Footer Social Links*/
+#social_row {
+  margin-bottom: 0px;
+  color: #ffff;
+}
+
+.social ul {
+  margin: 0px;
+}
 .social li {
   font-size: 200%;
-  margin: 5px;
   padding: 2%;
   display: inline-block;
 }

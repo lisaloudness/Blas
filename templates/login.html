@@ -1,10 +1,11 @@
-{% extends "base.html" %}
-{% block content %}
+{%- extends "base.html" -%}
+{%-block content -%}
 
 
 <div class="login-hero">  
+  
 <!-- REGISTRATION CARD -->
-  <div class="container fluid center-align">
+  <div class="container fluid" id="login-form">
     <div class="row">
       <div class="center-align orange-text strong-text">
         <h6>Please log in to manage your recipes</h6>
@@ -44,7 +45,8 @@
         </p>
       </div>
     </div>
-    
+  </div>  
 
 </div> 
-{% endblock %}
+
+{%- endblock -%}

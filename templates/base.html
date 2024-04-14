@@ -12,8 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Engagement&family=Pacifico&display=swap" rel="stylesheet">
-  {% block styles %}
-  {% endblock %}
+  {%- block styles -%}
+  {%- endblock -%}
+
   <title>Blas</title>
   </head>
 <body>
@@ -26,17 +27,17 @@
       <ul class="right hide-on-med-and-down">
         <li ><a href="{{ url_for('home') }}">Home</a></li>
         <li class="active"><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
-      {% if session.user %}
+      {%- if session.user -%}
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
-        {% if session.user|lower == "admin"|lower %}
+        {%- if session.user|lower == "admin"|lower -%}
             <li><a href="{{ url_for('admin') }}">Admin Portal</a></li>
-          {% endif %}
+          {%- endif -%}
         <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}"><i class="medium material-icons">account_circle</i></a></li>
-      {% else %}
+      {%- else -%}
         <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
-      {% endif %}
+      {%- endif -%}
       </ul>
     </div>
   </nav>  
@@ -45,52 +46,52 @@
     <li><h4 class="center-align" href="{{ url_for('home') }}">Blas</h4></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
-        {% if session.user %}
+        {%- if session.user -%}
           <li><a href="{{ url_for('logout') }}">Log Out</a></li>
           <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
-          {% if session.user|lower == "admin"|lower %}
+          {%- if session.user|lower == "admin"|lower -%}
             <li><a href="{{ url_for('admin') }}">Admin Portal</a></li>
-          {% endif %}
+          {%- endif -%}
           <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}">Profile</a>
-        {% else %}
+        {%- else -%}
           <li><a href="{{ url_for('register') }}">Sign Up</a></li>
           <li><a href="{{ url_for('login') }}">Log In</a></li>
-        {% endif %}
+        {%- endif -%}
         </ul>
 </header>
 
-<div class="flash-message">
-  <!-- flash messages -->
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      {% for message in messages %}
+ <!-- flash messages -->
+{%- with messages = get_flashed_messages() -%}
+  {%- if messages -%}
+    <div class="flash-message"></div>
+      {%- for message in messages -%}
         <div class="row flashes">
-          <div class="col s12 l7 offset-l5">
-          <h4 class="orange center-align">{{ message }}</h4>
+          <div class="col s12 l7 offset-l3">
+            <h4 class="orange center">{{ message }}</h4>
+          </div>
         </div>
-      {% endfor %}
-    {% endif %}
-  {% endwith %}
-      </div>
-    
+      {%- endfor -%}
+    </div>   
+  {%- endif -%}
+{%- endwith -%} 
 
 <main>
-{% block content %}
-{% endblock %}
+
+{%- block content -%}
+{%- endblock -%}
+
 </main>
 
-  <footer class="page-footer grey darken-4">
-    <div class="container ">
-      <div class="row center">
+  <footer class="grey darken-4">
+      <div class="row center" id="social_row">
         <ul class="social">
           <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
           <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
           <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
           <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-      </ul>
-      <p>Website created for educational purposes only</p>
-      </div>
-    </div>   
+        </ul>
+        <p>Website created for educational purposes only</p>
+      </div> 
   </footer>
 
 
@@ -98,8 +99,8 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  {% block scripts %}
-  {% endblock %}
+  {%- block scripts -%}
+  {%- endblock -%}
 
 </body>
 </html>

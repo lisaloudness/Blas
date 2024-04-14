@@ -47,7 +47,7 @@ def register():
         #-- check if name already exists in a database --
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
@@ -253,8 +253,18 @@ def delete_recipe(recipe_id):
             mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
             flash("Recipe Successfully Deleted")
 
-    # Redirect to the profile page regardless of the outcome
-    return redirect(url_for("profile", username=session["user"]))
+    # Check if the logged-in user is authorized to delete the recipe
+    logged_in_user = session["user"]
+    if logged_in_user == "admin" or logged_in_user == recipe.get("created_by"):
+        # Delete the recipe
+        mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+        flash("Recipe Successfully Deleted")
+
+    # Determine redirect URL based on current location
+    if request.referrer and "/admin.html" in request.referrer:
+        return redirect(url_for("admin"))  # Redirect to admin interface
+    else:
+        return redirect(url_for("profile", username=session["user"]))  # Redirect to profile page
 
 
 @app.route("/admin.html")
