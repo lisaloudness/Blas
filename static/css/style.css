@@ -72,7 +72,7 @@ h6 {
     background-position: center;
     background-attachment: local;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
   }
 
   #login-form {
@@ -150,3 +150,25 @@ margin: auto;
  .social {
   margin-top: 0px;
  }
+ 
+/*Hide starting at `max-width: 989px`, and then show at the `lg` breakpoint*/
+.custom-class-logo {
+  display: none;
+}
+
+
+@media screen and (min-width: 990px) {
+  
+  .custom-class-logo {
+    display: block;
+  }
+  
+}
+
+@media screen and (max-width: 990px) {
+  #index-text {
+    margin-top: 35vh;
+    font-size: 20px;
+}
+
+}
