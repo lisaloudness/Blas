@@ -60,23 +60,35 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+        username = request.form.get("username").lower()
+        password = request.form.get("password")
+
+        # Check if username exists in the database
+        existing_user = mongo.db.users.find_one({"username": username})
 
         if existing_user:
-            # ensure hashed password matches user input
-            if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        return redirect(url_for(
-                            "profile", username=session["user"]))   
-            
+            # Verify the submitted password against the hashed password in the database
+            if check_password_hash(existing_user["password"], password):
+                # Store the username in the session to indicate user is logged in
+                session["user"] = username
+
+                # Check if the logged-in user is an admin
+                if session["user"].lower() == "admin":
+                    # Redirect to admin dashboard
+                    return redirect(url_for("admin"))
+                else:
+                    # Redirect to user profile
+                    return redirect(url_for("profile", username=username))
+            else:
+                # Incorrect password
+                flash("Incorrect password. Please try again.", "error")
+                return redirect(url_for("login"))
         else:
-            # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            # Username doesn't exist
+            flash("Username not found. Please check your username.", "error")
             return redirect(url_for("login"))
-    
+
+    # Render the login page for GET requests
     return render_template("login.html")
 
 
@@ -250,7 +262,7 @@ def delete_recipe(recipe_id):
     else:
         return redirect(url_for("profile", username=session["user"]))  # Redirect to profile page
 
-
+# Only accessible if logged in user is "Admin"
 @app.route("/admin.html")
 def admin():
     recipes = mongo.db.recipes.find()

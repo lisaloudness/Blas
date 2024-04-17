@@ -31,9 +31,10 @@
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
         {%- if session.user|lower == "admin"|lower -%}
-            <li><a href="{{ url_for('admin') }}">Admin Portal</a></li>
-          {%- endif -%}
+            <li><a href="{{ url_for('admin') }}">Admin Dashboard</a></li>
+        {%- else -%}
         <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}"><i class="medium material-icons">account_circle</i></a></li>
+        {%- endif -%}
       {%- else -%}
         <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -51,8 +52,9 @@
           <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
           {%- if session.user|lower == "admin"|lower -%}
             <li><a href="{{ url_for('admin') }}">Admin Portal</a></li>
-          {%- endif -%}
+          {%- else -%}
           <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}">Profile</a>
+          {%- endif -%}
         {%- else -%}
           <li><a href="{{ url_for('register') }}">Sign Up</a></li>
           <li><a href="{{ url_for('login') }}">Log In</a></li>
