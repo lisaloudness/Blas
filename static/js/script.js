@@ -1,15 +1,15 @@
 $(document).ready(function(){
-    $(".sidenav").sidenav({edge: "right"}); // Hamburger Menu Collapse
-    $('.carousel.carousel-slider').carousel({  // Menu Carousel
-      fullWidth: true});
-    $('.carousel').carousel();                // Menu Carousel
-    $('select').formSelect();
-    $('.collapsible').collapsible();
-    $('.tooltipped').tooltip();
-    $('ul.tabs').tabs();
-    $('#textarea1').val('New Text');
-   
-  });
+  $(".sidenav").sidenav({edge: "right"}); // Hamburger Menu Collapse
+  $('.carousel.carousel-slider').carousel({  // Menu Carousel
+    fullWidth: true});
+  $('.carousel').carousel();                // Menu Carousel
+  $('select').formSelect();
+  $('.collapsible').collapsible();
+  $('.tooltipped').tooltip();
+  $('ul.tabs').tabs();
+  $('#textarea1').val('New Text');
+  $('.modal').modal();
+});
 
 //Dynamic create ingredient field on add_recipe form
 $(document).ready(function () {
@@ -20,7 +20,7 @@ $(document).ready(function () {
       var inputHtml = '<div class="input-field col s6"><i class="material-icons prefix">local_dining</i><input type="text" id="ingredient_' + ingredient_ + '" name="ingredient_' + ingredient_ + '"><label for="ingredient_' + ingredient_ + '">Ingredient ' + ingredient_ + '</label></div>';
       $("#ip_div").append(inputHtml);
   };
-
+  // Create form attributes for new ingredient
   $("#btn").click(function () {
       createInputs();
       $("#form")

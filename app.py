@@ -8,14 +8,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-class CustomFlask(Flask):
-
-    jinja_options = Flask.jinja_options.copy()
-    jinja_options.update(dict(
-        trim_blocks=True,
-        lstrip_blocks=True
-    ))
-
 
 def create_app():
 
@@ -64,7 +56,7 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
-
+#--LOGIN--
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -78,17 +70,13 @@ def login():
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
                         return redirect(url_for(
-                            "profile", username=session["user"]))
-            else:
-                # invalid password match
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
-
+                            "profile", username=session["user"]))   
+            
         else:
             # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-
+    
     return render_template("login.html")
 
 
@@ -104,6 +92,9 @@ def profile(username):
 
     # Fetch the user's recipes from the database
     user_recipes = mongo.db.recipes.find({"created_by": logged_in_user})
+    # If user has no recipes to display
+    if not user_recipes:
+        flash("All recipes you add to Blas will display here")
 
     return render_template("profile.html", username=username, recipes=user_recipes)
 
@@ -159,7 +150,6 @@ def add_recipes():
             "cook_time": request.form.get("cook_time"),
             "serves": request.form.get("serves"),
             "difficulty_level": request.form.get("difficulty_level"),
-            
             "ingredient_1": request.form.get("ingredient_1"),
             "ingredient_2": request.form.get("ingredient_2"),
             "ingredient_3": request.form.get("ingredient_3"),
@@ -247,14 +237,8 @@ def delete_recipe(recipe_id):
 
     # Check if the recipe exists
     if recipe:
-        # Check if the logged-in user matches the creator of the recipe
-        if session.get('user') == recipe.get('created_by'):
-            # Delete the recipe if the user is the creator
-            mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-            flash("Recipe Successfully Deleted")
-
     # Check if the logged-in user is authorized to delete the recipe
-    logged_in_user = session["user"]
+        logged_in_user = session["user"]
     if logged_in_user == "admin" or logged_in_user == recipe.get("created_by"):
         # Delete the recipe
         mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
