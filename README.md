@@ -1,8 +1,24 @@
-# Milestone Project 3
-
-## Blas Recipe Website
+# **Blas Recipe Website**
 
 ![Resonive All Screens](/static/images/readme/readme_screens.png)
+
+## **Table Of Content**
+1. [Introduction](#introduction)
+2. [Development](#development)
+3. [UX](#ux)
+   - [User Demographic](#user-demographic)
+   - [User Stories](#user-stories)
+4. [UI](#UI)
+   - [Layout](#layout)
+   - [Typography](#typography)
+   - [Color Scheme](#color-scheme)
+5. [Testing](#testing)  
+6. [Technologies Used](#technologies-used)
+7. [Deployment](#deployment)
+8. [Future Development](future-development)
+9. [Credits & Acknowledgements](#credits-&-acknowledgements)
+
+## **Introduction**
 
 This website was designed to be a basic online recipe book that display recipes for all who like to cook. The focus of the site is to allow users to upload recipes and images for other users to search and use.
 
@@ -10,8 +26,10 @@ This is the third of four Portfolio Projects that the developer must complete du
 
 The main requirements were to build a Non-Relational Database backed Flask project for a web application that allows users to store and manipulate data records about a particular domain. The focus of this project is on data rather than any business logic. This also requires the developer to create functionality for users to create, locate, display, edit and delete records (CRUD functionality).
 The full application can be viewed <a href="https://blas-8701405f8705.herokuapp.com/" target="_blank" >here</a>.
+
+[Back to top](#blas-recipe-website)
  
-## UX
+## **Development**
 
 This platform is targeted towards a wide range of end users, from those who are looking for quick and easy recipes due to a busy lifestyle, those who have a bit more time to browse and contribute, to those who simply love cooking and want to share their ideas and favourite recipes with the rest of the world!  The application is built fully responsive to provide an accessible user experience on all devices.
 
@@ -21,13 +39,8 @@ When the project’s initial planning began, informal discussions were held with
 
 ### User Demographic
 
-![recipe_user_1](https://user-images.githubusercontent.com/28737216/48661085-90193380-ea64-11e8-9caa-e2a98376aab3.PNG)
-
-![recipe_user_2](https://user-images.githubusercontent.com/28737216/48661185-1c782600-ea66-11e8-89fe-3492de14ab1d.PNG)
-
-![recipe_user_3](https://user-images.githubusercontent.com/28737216/48661190-27cb5180-ea66-11e8-8213-1e6a4fe3c82e.PNG)
-
-![recipe_user_4](https://user-images.githubusercontent.com/28737216/48661158-880dc380-ea65-11e8-9d88-5ccceab2c4dd.PNG)
+![recipe_user_1](https://user-images.githubusercontent.com/28737216/48661085-90193380-ea64-11e8-9caa-e2a98376aab3.PNG) ![recipe_user_4](https://user-images.githubusercontent.com/28737216/48661158-880dc380-ea65-11e8-9d88-5ccceab2c4dd.PNG)  
+![recipe_user_3](https://user-images.githubusercontent.com/28737216/48661190-27cb5180-ea66-11e8-8213-1e6a4fe3c82e.PNG) ![recipe_user_2](https://user-images.githubusercontent.com/28737216/48661185-1c782600-ea66-11e8-89fe-3492de14ab1d.PNG)
 
 
 ### User-Stories
@@ -52,12 +65,15 @@ When the project’s initial planning began, informal discussions were held with
 -	Users can easily search the recipes without needing to register.
 -   Users can easily search again or clear previous search
 
+[Back to top](#blas-recipe-website)
+
+
+## **UX**
 
 ### Data Schema:
 
 The following shows the basic set-up data schemacof the MongoDB database:
 ![mongodb categories](/static/images/readme/mongo_schema.png)
-
 
 
 ### Wireframes / Mockups:
@@ -71,7 +87,7 @@ The following shows the basic set-up data schemacof the MongoDB database:
 - Profile Page Wireframe - [View]()
 - Add/Edit Page Wireframe - [View]()
 
-
+[Back to top](#blas-recipe-website)
 
 ## Features
 
@@ -102,7 +118,9 @@ The main features of the application are the following:
 - Registered users are allowed to upload recipes to the website.
 - When adding new recipes / editing recipes users can also add New Categories.
 
-### Features Left to Implement / Issues
+[Back to top](#blas-recipe-website)
+
+### Future Developments
 
 Ideally, User Registration would be used on such an application for the CRUD operations within the database.  This would require Account Authentication / Login functionaility also
 
@@ -114,6 +132,7 @@ When the responsiveness was tested on certain phones, the "Get Started" button o
 
 Lastly, there were issues with using nested data within some records, which required a change of approach to the data schema.
 
+[Back to top](#blas-recipe-website)
 
 # Technologies Used
 
@@ -172,6 +191,7 @@ Technologies used in this project include:
 * Gitpod used as development environment workspace
 * The project uses **JQuery** to simplify DOM manipulation.
 
+[Back to top](#blas-recipe-website)
 
 ## Testing
 
@@ -190,6 +210,8 @@ Many GitHub commits will contain the prefix `TESTING`
 Pep 8 was used to assist with cleaning the data - indentation, whitespaces, non-spaces, 2 lines expected
 
 http://pep8online.com/
+
+[Back to top](#blas-recipe-website)
 
 ## Deployment
 This website is deployed to Heroku from a GitHub repository, the following steps were taken:
@@ -254,6 +276,8 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 
 Actual Enviroment variables not disclosed for security. They can be found in my env.py file which has been added to my .gitignore file within my project and therefore is not commited to github.
 
+[Back to top](#blas-recipe-website)
+
 ## Credits
 
 ### Code
@@ -276,3 +300,5 @@ Actual Enviroment variables not disclosed for security. They can be found in my 
 
 - I received inspiration for this project from https://www.bbcgoodfood.com
 - I would like to thank
+
+[Back to top](#blas-recipe-website)
