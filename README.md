@@ -1,15 +1,15 @@
 # Milestone Project 3
 
-## Basic Recipe Book
+## Blas Recipe Website
 
-This is a basic online recipe book for various users.  Features include viewing, editing and adding recipes - additional features may be added in the future.  
+![Resonive All Screens](/static/images/readme/readme_screens.png)
 
 This website was designed to be a basic online recipe book that display recipes for all who like to cook. The focus of the site is to allow users to upload recipes and images for other users to search and use.
 
 This is the third of four Portfolio Projects that the developer must complete during their Full Stack Software Development Program at The Code Institute.
 
 The main requirements were to build a Non-Relational Database backed Flask project for a web application that allows users to store and manipulate data records about a particular domain. The focus of this project is on data rather than any business logic. This also requires the developer to create functionality for users to create, locate, display, edit and delete records (CRUD functionality).
-The full application can be viewed <a href="https://basic-recipe-book.herokuapp.com/" target="_blank" >here</a>.
+The full application can be viewed <a href="https://blas-8701405f8705.herokuapp.com/" target="_blank" >here</a>.
  
 ## UX
 
@@ -47,15 +47,18 @@ When the project’s initial planning began, informal discussions were held with
 -	Users can log in or out of their accounts to connect or disconnect from the website.
 -	Users can easily check if they are logged in or out to know their current status.
 #### Epic: Navigation
--	Users can easily navigate the main pages of the website from the homepage and fixed nav bar.
--	
+-	Users can easily navigate the main pages of the website from the homepage and fixed nav bar.	
 -	Users can search for recipes using keywords to quickly find specific recipes.
 -	Users can easily search the recipes without needing to register.
+-   Users can easily search again or clear previous search
 
 
 ### Data Schema:
 
-The following shows the basic set-up of the MongoDB database, which is hosted on the cloud-based Mlab DaaS:
+The following shows the basic set-up data schemacof the MongoDB database:
+![mongodb categories](/static/images/readme/mongo_schema.png)
+
+
 
 ### Wireframes / Mockups:
 
@@ -72,9 +75,23 @@ The following shows the basic set-up of the MongoDB database, which is hosted on
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+
  
-### Existing Features
+### Home Page
+
+### Recipes / Result Page
+
+### Login / Sign Up Page
+
+### Profile Page
+
+
+### Admin Page
+
+
+### Add Recipe Page
+
+### Edit Recipe Page
 
 The main features of the application are the following:
 
