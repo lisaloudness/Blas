@@ -109,14 +109,14 @@ border-bottom-style: solid;
 border-bottom-width: 1px;
 }
 
-#edit_container{
+#edit_container {
 padding:50px;
 border-radius: 2%;
 color: black;
 }
 
 #view_container{
-background-color: white;
+background-color: #ffffff;
 padding:50px;
 border-radius: 2%;
 width: 70%;
@@ -170,12 +170,21 @@ margin: auto;
   #view_container {
     padding: 0px;
   }
+
+  
 }
 
 @media screen and (max-width: 600px) {
   .login-hero{
-    background: block;
+    background: none;
     background-color: #212121;
+  }
+
+  #edit_container {
+    display: block;
+    padding:5px;
+    border-radius: 2%;
+    width: 100%;
   }
 }
   
