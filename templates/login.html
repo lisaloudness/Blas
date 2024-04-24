@@ -5,7 +5,9 @@
 <div class="login-hero">  
   
 <!-- REGISTRATION CARD -->
+
   <div class="container fluid" id="login-form">
+
     <div class="row">
       <div class="center-align orange-text strong-text">
         <h6>Please log in to manage your recipes</h6>
@@ -13,32 +15,32 @@
     </div>
 
     <form method="POST" action="{{ url_for('login') }}">
-      <div class="row">
+      <div class="row valign-wrapper">
 <!-- USERNAME FIELD -->
         <div class="input-field col s8 offset-s3 m6 offset-m3 white-text">
           <i class="fas fa-user-cog prefix"></i>
             <input id="username" name="username" type="text" minlength="5"
-              maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+              maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="query validate" required>
               <label for="username">Username</label>
         </div>
       </div>   
 <!-- PASSWORD FIELD -->
-      <div class="row">
+      <div class="row valign-wrapper">
         <div class="input-field col s8 offset-s3 m6 offset-m3 white-text">
           <i class="fas fa-user-lock prefix"></i>
             <input id="password" name="password" type="password" minlength="5"
-              maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+              maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="query validate" required>
                 <label for="password">Password</label>
         </div>
       </div>
 <!-- LOGIN BUTTON-->
-      <div class="row">
+      <div class="row valign-wrapper">
         <button type="submit" class="col s6 offset-s4 m4 offset-m4 btn-large waves-effect waves-light orange">Log In <i class="fas fa-sign-in-alt"></i></button>
       </div>
     </form>
   
 
-    <div class="row">
+    <div class="row valign-wrapper">
       <div class="col s12 m6 offset-m3">
         <p class="center-align orange-text strong-text">
           New Here? <a href="{{ url_for('register') }}" class="white-text text-darken-4 strong-text">Sign Up</a>

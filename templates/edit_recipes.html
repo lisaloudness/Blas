@@ -3,10 +3,11 @@
 <div class="grey darken-4">
 <div class="container fluid">
   <br>
-  <h3 class="header center orange-text">Edit Recipe</h3>
+  <h3 class="header center orange-text">{{ recipe.recipe_name }}</h3>
+  <h6 class="header center orange-text">To edit your recipe, please update the details below</h6>
   <form  method="POST" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}">
     <div class="row card-panel" id="edit_container">
-      <div class="row" id="recipe_css_image">
+      <div class="row">
         {% if recipe.image %}
           <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img" id="recipe_css_image">
         {% else %}
@@ -39,7 +40,7 @@
       <div class="row">
         <div class="input-field col s6 m3 l3">
           <i class="material-icons prefix">timer</i>
-            <input class="materialize-textarea" type="text" id="prep_time" name="prep_time" min="5" max="120" value="{{ recipe.prep_time }}">
+            <input class="materialize-textarea" type="text" id="prep_time" name="prep_time" value="{{ recipe.prep_time }}">
               <label for="prep_time">Preperation Time (minutes)</label>
         </div>
         <div class="input-field col s6 m3 l3">
@@ -50,7 +51,7 @@
         <div class="input-field col s6 m3 l3">
           <i class="material-icons prefix">sort</i>
           <input id="serves" name="serves" minlength="1" maxlength="2"
-            type="text" class="materialize-textarea validate" value="{{ recipe.serves }}"required>  
+            type="text" class="materialize-textarea validate" value="{{ recipe.serves }}" required>  
           <label for="serves">Serves</label>
         </div> 
           <div class="input-field col s6 m3 l3">
@@ -60,7 +61,7 @@
               <option value="" disabled>Difficulty</option>
               
                 {% if difficult.difficulty_level == recipe.difficulty_level %}
-                <option value="{{ difficult.difficulty_level }}"selected>{{ difficult.difficulty_level }}</option>
+                <option value="{{ difficult.difficulty_level }}" selected>{{ difficult.difficulty_level }}</option>
                 {% else %}
               <option value="{{ difficult.difficulty_level }}">{{ difficult.difficulty_level }}</option>
                 {% endif %}
@@ -84,56 +85,56 @@
           <table>
             
         
-            <tbody>
-              <tr id="table_border" class="col s12">
+            <tbody id="table_border">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_1" name="ingredient_1" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_1 }}">
                   <label for="ingredient_1"></label>
                 </td>
               </tr>
-              <tr id="table_border" class="col s12">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_2" name="ingredient_2" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_2 }}">
                   <label for="ingredient_2"></label>
                 </td>
               </tr>
-              <tr id="table_border" class="col s12">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_3" name="ingredient_3" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_3 }}">
                   <label for="ingredient_3"></label>
                 </td>
               </tr>
-              <tr id="table_border" class="col s12">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_4" name="ingredient_4" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_4 }}">
                   <label for="ingredient_4"></label>
                 </td>
               </tr>
-              <tr id="table_border" class="col s12">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_5" name="ingredient_5" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_5 }}">
                   <label for="ingredient_5"></label>
                 </td>
               </tr>
-              <tr id="table_border" class="col s12">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_6" name="ingredient_6" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_6 }}">
                   <label for="ingredient_6"></label>
                 </td>
               </tr>
-              <tr id="table_border" class="col s12">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_7" name="ingredient_7" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_7 }}">
                   <label for="ingredient_7"></label>
                 </td>
               </tr>
-              <tr id="table_border" class="col s12">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_8" name="ingredient_8" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_8 }}">
                   <label for="ingredient_8"></label>
                 </td>
               </tr>
-              <tr id="table_border" class="col s12">
+              <tr class="col s12">
                 <td>
                   <input id="ingredient_9" name="ingredient_9" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_9 }}">
                   <label for="ingredient_9"></label>
@@ -150,31 +151,31 @@
             <tbody>
               <tr>
                 <td><strong>Step 1: </strong><br>
-                  <input id="method_1" name="method_1" type="text" class="materialize-textarea validate" value="{{ recipe.method_1 }}">
+                  <input id="method_1" name="method_1" type="text" class="materialize-textarea truncate validate" value="{{ recipe.method_1 }}">
                   <label for="method_1"></label>
                 </td>
               </tr>
               <tr>
                 <td><strong>Step 2: </strong><br>
-                  <input id="method_2" name="method_2" type="text" class="materialize-textarea validate" value="{{ recipe.method_2 }}">
+                  <input id="method_2" name="method_2" type="text" class="materialize-textarea truncate validate" value="{{ recipe.method_2 }}">
                   <label for="method_2"></label>
                 </td>
               </tr>
               <tr>
                 <td><strong>Step 3: </strong><br>
-                  <input id="method_3" name="method_3" type="text" class="materialize-textarea validate" value="{{ recipe.method_3 }}">
+                  <input id="method_3" name="method_3" type="text" class="materialize-textarea truncate validate" value="{{ recipe.method_3 }}">
                   <label for="method_3"></label>
                 </td>
               </tr>
               <tr>
                 <td><strong>Step 4: </strong><br>
-                  <input id="method_4" name="method_4" type="text" class="materialize-textarea validate" value="{{ recipe.method_4 }}">
+                  <input id="method_4" name="method_4" type="text" class="materialize-textarea truncate validate" value="{{ recipe.method_4 }}">
                   <label for="method_4"></label>
                 </td>
               </tr>
               <tr>
                 <td><strong>Step 5: </strong><br>
-                  <input id="method_5" name="method_5" type="text" class="materialize-textarea validate" value="{{ recipe.method_5 }}">
+                  <input id="method_5" name="method_5" type="text" class="materialize-textarea truncate validate" value="{{ recipe.method_5 }}">
                   <label for="method_5"></label>
                 </td>
               </tr>
@@ -190,7 +191,7 @@
         <!-- recipe url input field-->
       <div class="input-field col s12">
         <i class="far fa-images prefix"></i>
-          <input id="image" name="image" alt="Recipe Image" class="responsive-img" type="url" pattern="https://.*" size="30" value="{{ recipe.image }}" validate>
+          <input id="image" name="image" class="responsive-img" type="url" pattern="https://.*" size="30" value="{{ recipe.image }}">
             <label for="image">Recipe Image URL
               <i class="fas fa-question-circle tooltipped" data-position="top"
                 data-tooltip="You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here"></i>

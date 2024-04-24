@@ -124,27 +124,28 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
-@app.route("/search", methods=["GET`", "POST"])
+@app.route("/search", methods=["GET", "POST"])
 def search():
     if request.method == "POST":
         query = request.form.get("query")
-            # Store the query in the session
-        session['last_query'] = query
-        # Perform the search and get the results
-        results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    else: # if search is empty retrieve all recipes
-        results = list(mongo.db.recipes.find())
 
-    # If no results are found, display a flash message
-    if not results and query:
-            flash(
-            "No results found for '{}' Please try another search".format(
-                query))
+        if query:
+            # Perform a case-insensitive search for recipes containing the query text
+            results = mongo.db.recipes.find({"$text": {"$search": query, "$caseSensitive": False}})
+        else:
+            # If no query is provided, retrieve all recipes
+            results = mongo.db.recipes.find()
 
+        # Convert the results cursor to a list
+        recipes = list(results)
 
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+        if not recipes:
+            flash("No results found for '{}'".format(query))
+    else:
+        # If it's a GET request without form submission, retrieve all recipes
+        recipes = list(mongo.db.recipes.find())
+
     return render_template("recipes.html", recipes=recipes, query=query)
-
 
 @app.route("/recipes", methods=["GET"])
 def show_recipes():

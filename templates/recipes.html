@@ -12,10 +12,10 @@
             <div class="col s12 m6 offset-m3 l4 offset-l4">
                 <div class="searchbox center">
                     <form method="POST" action="{{ url_for('search') }}">
-                        <button id="query" value="query" name="action" type="submit" method="POST" class="btn-floating">
+                        <button id="query" value="query" name="action" type="submit" class="btn-floating">
                             <i class="material-icons orange prefix">search</i>
                         </button>
-                            <input name="query" type="text" class="center" placeholder="What are you looking for?" value="{{ query }}" reqiured>
+                            <input name="query" type="text" class="query center" placeholder="What are you looking for?" value="{{ query }}">
                             <!-- Reset button to clear the search query -->
                     {% if query %}
                     <a href="{{ url_for('get_recipes') }}" class="btn-small orange">
@@ -47,11 +47,11 @@
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
-                        <p><i id="icon_left" class="material-icons left">poll</i><strong>Category:</strong> {{ recipe.category_name }}</p>
-                        <p><i id="icon_left" class="material-icons left">sort</i><strong>Serving:</strong> {{ recipe.serves }}</p>
-                        <p><i id="icon_left" class="material-icons left">timer</i><strong>Prep Time:</strong> {{ recipe.prep_time }}</p>
-                        <p><i id="icon_left" class="material-icons left">timer</i><strong>Cooking Time:</strong> {{ recipe.cook_time }}</p>
-                        <p><i id="icon_left" class="material-icons left">star</i><strong>Difficulty:</strong> {{ recipe.rating }}</p>
+                        <p><i class="material-icons left">poll</i><strong>Category:</strong> {{ recipe.category_name }}</p>
+                        <p><i class="material-icons left">sort</i><strong>Serving:</strong> {{ recipe.serves }}</p>
+                        <p><i class="material-icons left">timer</i><strong>Prep Time:</strong> {{ recipe.prep_time }}</p>
+                        <p><i class="material-icons left">timer</i><strong>Cooking Time:</strong> {{ recipe.cook_time }}</p>
+                        <p><i class="material-icons left">star</i><strong>Difficulty:</strong> {{ recipe.rating }}</p>
                         <p><em><strong>by: {{ recipe.created_by }}</strong></em></p>
                         <a href="{{ url_for('view_recipes', recipe_id=recipe._id) }}" class="waves-effect orange waves-light btn-small"><i class="material-icons left">remove_red_eye</i>View Recipe</a><br><br>
                         {% if session.user|lower == recipe.created_by|lower %}

@@ -22,14 +22,14 @@
                 {%- for category in categories -%}
                 <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                 {%- endfor -%}
-              </select label="category_name">
+              </select>
           </div>
         </div>
         <div class="row">
 
           <div class="input-field col s6 m3 l3">
             <i class="material-icons prefix">timer</i>
-              <input class="materialize-textarea validate" type="text" id="prep_time" name="prep_time" min="5" max="120">
+              <input class="materialize-textarea validate" type="text" id="prep_time" name="prep_time">
                 <label for="prep_time">Prep Time</label>
           </div>
     
@@ -157,7 +157,7 @@
         <!-- recipe url input field-->
         <div class="input-field col s12">
           <i class="far fa-images prefix"></i>
-            <input id="image" name="image" alt="Recipe Image" class="responsive-img" type="url" pattern="https://.*" size="30" validate>
+            <input id="image" name="image" class="responsive-img" type="url" pattern="https://.*" size="30">
               <label for="image">Recipe Image URL
                 <i class="fas fa-question-circle tooltipped" data-position="top"
                   data-tooltip="You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here"></i>
@@ -169,6 +169,7 @@
           <div class="col s12 center">
             <button type="submit" class="btn-large waves-effect waves-light orange">Add Recipe  <i class="fas fa-plus-square"></i></button>
           </div>
+        </div>
         </div>
       </div>
     </form>

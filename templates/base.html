@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
@@ -19,10 +19,10 @@
   </head>
 <body>
 <header>
-  <div class="navbar-fixed" class="border_nav">
+  <div class="navbar-fixed border_nav">
   <nav>
     <div class="nav-wrapper grey darken-4">
-      <a href="{{ url_for('home') }}" class="brand-logo" id="logo">Blas</a>
+      <a href="{{ url_for('home') }}" class="brand-logo logos">Blas</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li ><a href="{{ url_for('home') }}">Home</a></li>
@@ -43,8 +43,8 @@
     </div>
   </nav>  
 </div>
-  <ul class="sidenav" id="mobile-demo" class="border_nav">
-    <li><h4 class="center-align" href="{{ url_for('home') }}">Blas</h4></li>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a class="center-align" href="{{ url_for('home') }}">Blas</a></li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
         {%- if session.user -%}
