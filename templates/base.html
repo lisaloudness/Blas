@@ -1,100 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Engagement&family=Pacifico&display=swap" rel="stylesheet">
-  {%- block styles -%}
-  {%- endblock -%}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+        crossorigin="anonymous" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Engagement&family=Pacifico&display=swap" rel="stylesheet">
+    {%- block styles -%}
+    {%- endblock -%}
 
-  <title>Blas</title>
-  </head>
+    <title>Blas</title>
+</head>
+
 <body>
-<header>
-  <div class="navbar-fixed border_nav">
-  <nav>
-    <div class="nav-wrapper grey darken-4">
-      <a href="{{ url_for('home') }}" class="brand-logo logos">Blas</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li ><a href="{{ url_for('home') }}">Home</a></li>
-        <li class="active"><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
-      {%- if session.user -%}
-        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-        <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
-        {%- if session.user|lower == "admin"|lower -%}
-            <li><a href="{{ url_for('admin') }}">Admin Dashboard</a></li>
-        {%- else -%}
-        <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}"><i class="medium material-icons">account_circle</i></a></li>
-        {%- endif -%}
-      {%- else -%}
-        <li><a href="{{ url_for('register') }}">Sign Up</a></li>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
-      {%- endif -%}
-      </ul>
-    </div>
-  </nav>  
-</div>
-  <ul class="sidenav" id="mobile-demo">
-    <li><a class="center-align" href="{{ url_for('home') }}">Blas</a></li>
-    <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
-        {%- if session.user -%}
-          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-          <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
-          {%- if session.user|lower == "admin"|lower -%}
+    <header>
+        <div class="navbar-fixed border_nav">
+            <nav>
+                <div class="nav-wrapper grey darken-4">
+                    <a href="{{ url_for('home') }}" class="brand-logo logos">Blas</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li ><a href="{{ url_for('home') }}">Home</a></li>
+                            <li class="active"><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
+                            {%- if session.user -%}
+                            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                            <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
+                            {%- if session.user|lower == "admin"|lower -%}
+                            <li><a href="{{ url_for('admin') }}">Admin Dashboard</a></li>
+                            {%- else -%}
+                            <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}"><i class="medium material-icons">account_circle</i></a></li>
+                            {%- endif -%}
+                            {%- else -%}
+                            <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+                            <li><a href="{{ url_for('login') }}">Log In</a></li>
+                            {%- endif -%}
+                        </ul>
+                </div>
+            </nav>  
+        </div>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a class="center-align" href="{{ url_for('home') }}">Blas</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('get_recipes') }}">Search Recipes</a></li>
+            {%- if session.user -%}
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
+            {%- if session.user|lower == "admin"|lower -%}
             <li><a href="{{ url_for('admin') }}">Admin Portal</a></li>
-          {%- else -%}
-          <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}">Profile</a>
-          {%- endif -%}
-        {%- else -%}
-          <li><a href="{{ url_for('register') }}">Sign Up</a></li>
-          <li><a href="{{ url_for('login') }}">Log In</a></li>
-        {%- endif -%}
+            {%- else -%}
+            <li><a href="{{ url_for('profile', username=session['user']) }}" class="tooltipped" data-position="bottom" data-tooltip="You are logged in {{ username }}">Profile</a>
+            {%- endif -%}
+            {%- else -%}
+            <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            {%- endif -%}
         </ul>
-</header>
+    </header>
 
  <!-- flash messages -->
 {%- with messages = get_flashed_messages() -%}
-  {%- if messages -%}
-    <div class="flash-message"></div>
-      {%- for message in messages -%}
+    {%- if messages -%}
+        <div class="flash-message"></div>
+        {%- for message in messages -%}
         <div class="row flashes">
-          <div class="col s12 l7 offset-l3">
-            <h4 class="orange center">{{ message }}</h4>
-          </div>
+            <div class="col s12 l7 offset-l3">
+                <h4 class="orange center">{{ message }}</h4>
+            </div>
         </div>
-      {%- endfor -%}
-    </div>   
-  {%- endif -%}
+        {%- endfor -%}
+        </div>   
+    {%- endif -%}
 {%- endwith -%} 
 
-<main>
+    <main>
 
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 
-</main>
+    </main>
 
-  <footer class="grey darken-4"  id="footer">
-      <div class="row center" id="social_row">
-        <ul class="social">
-          <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-          <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
-          <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
-          <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-        <p>Website created for educational purposes only</p>
-      </div> 
-  </footer>
+    <footer class="grey darken-4"  id="footer">
+        <div class="row center" id="social_row">
+            <ul class="social">
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <p>Website created for educational purposes only</p>
+        </div> 
+    </footer>
 
 
   <!--  Scripts-->
