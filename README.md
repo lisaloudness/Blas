@@ -91,6 +91,129 @@ The following shows the basic set-up data schema of the MongoDB database:
 
 ## Features
 
+### Design Features
+Each page of the website features a consistent responsive navigational system:
+
+- The **Header** contains a conventionally placed logo in the top left of the page (whereby clicking this will redirect users back to the home page) and a navigation bar in the right of the header. On smaller screens, the navigation bar condenses into a dropdown with navigation options and the logo moves to center screen.
+
+
+- The **Footer** is kept simple containing only social links and disclaimer information. On smaller screens, this condenses into a single column, with each section moving underneath its neighbour on the left.
+
+<dl>
+  <dt><a href="https://blas-8701405f8705.herokuapp.com/home/" target="_blank" alt="Home Page">Home Page</a></dt>
+  <dd>The Home Page is laid out with a nav section on top, an image below the width of the screen. The features are as follows:
+     <ul>
+          <li><strong>Get Cooking! Button</strong> - On the home screen you will see, a bold, colourful button with the words “Get Cooking” to invite and entice the user into clicking further into the website.
+          </li>
+          <li><strong>Sign Up</strong> - Under the above mentioned button, there will be a link inviting first time users to sign up. This will navigate to the sign up page.
+          </li>
+     </ul>
+  </dd>
+
+  <dt><a href="https://blas-8701405f8705.herokuapp.com/get_recipes/" target="_blank" alt="Search Recipes">Search Recipes Page</a></dt>
+  <dd>This is the main page of the website where all users (registered or unregistered) will be able to view and search all recipes.
+     <ul>
+          <li><strong>Search Box</strong> - This will be the main focus of the page, allowing users to enter a search term.
+          </li>
+	<li><strong>Recipe Cards</strong> - Below the search box will be individual recipe cards displayed in rows to fill the screen.  Allowing all recipes to display in this way will prompt the user to use the search box and not overwhelm with the entire library.
+          </li>
+<li><strong>Search Results</strong> - These will appear on the same page and the remaining library will be hidden.
+          </li>
+<li><strong>Search Box</strong> - Once a search has been performed, a reset button will appear below the search box enabling the user to revert to the all in library.
+     </ul>
+  </dd>
+
+  <dt><a href="https://8080-lisaloudness-blas-udlva2oew1g.ws-eu110.gitpod.io/view_recipes/6617e2e2c4ee9a40c5af29ac" target="_blank" alt="View Recipe">View Recipe Page</a></dt>
+  <dd>
+     <ul>
+          <li><strong>Featured Image</strong> - The featured image shows the image the user uploaded, or the stock placeholder image if no image was uploaded by the user.
+          </li>
+          <li><strong>Edit Buttons</strong> - If the user is logged in and is the author of the said recipe, clicking the edit button will bring the user to the edit page. The recipe details are populated into the form and the user can edit the information, upload a new image and save the information. 
+          </li>
+     </ul>
+  </dd>
+
+  <dt><a href="https://blas-8701405f8705.herokuapp.com/edit_recipes/6617e2e2c4ee9a40c5af29ac" target="_blank" alt="Edit Recipe Page">Edit Recipe Page</a></dt>
+  <dd>This page shows the form populated with the specific recipe's information which can be saved and edited:
+     <ul>
+          <li><strong>Edit Recipe Form</strong> - The form is prepopulated with all the recipe information. The user can edit this information, only if they are the author of the recipe. Saving this recipe redirects the user to their profile page where they can then view their uploaded recipe list.
+          </li>
+     </ul>
+  </dd>
+
+  <dt><a href="https://blas-8701405f8705.herokuapp.com/add_recipes/" target="_blank" alt="Add Recipe Page">Add Recipe Page</a></dt>
+  <dd>This page has a form that allows the user to add a recipe, as well as upload an image:
+     <ul>
+          <li><strong>Add Recipe Form</strong> - An empty form is displayed, allowing the user to enter the recipe details, as well as upload an image of the recipe. If no image is uploaded, the stock placeholder image is saved instead. Adding this recipe redirects the user to their profile page where they can then view their uploaded recipe list.
+          </li>
+     </ul>
+  </dd>
+
+  <dt><a href="https://blas-8701405f8705.herokuapp.com/login" target="_blank" alt="Sign In Page">Sign In Page</a></dt>
+  <dd>This page has a form allowing the user to enter their username, email and password to register an account:
+     <ul>
+          <li><strong>Sign In Form</strong> - This form has two input fields, the username and the password. A submit button at the end of the form login the user in if the information was correct and has not been used by other users previously, and redirects the user to their profile page.
+          </li>
+     </ul>
+  </dd>
+  
+  <dt><a href=" https://blas-8701405f8705.herokuapp.com/register" target="_blank" alt="Sign Up Page">Sign Up Page</a></dt>
+  <dd>This page has a form allowing the user to enter their username and password to register an account:
+     <ul>
+          <li><strong>Sign In Form</strong> - This form has two input fields, username and password. A submit button at the end of the form login the user in if the information was correct and has not been used by other users previously, and redirects the user to their profile page.
+          </li>
+     </ul>
+  </dd>
+</dl>
+ 
+### Existing Features
+- **Header Logo** - Appearing on every page for brand recognition. Clicking the logo will return the users to the home page, as expected.
+- **Header Navigation Bar** - Appearing on every page for a consistently easy and intuitive navigable system.
+- **Social Icons** - Appearing on every page, the icons are appropriate representations of the Social Media platforms, found in the footer.
+- **Recipe Cards** - Appearing on the search page and profile page, the recipe cards give a brief overview of the recipe, showing the image, description, servings, prep and cook time.
+- **Recipe Form** - Access by clicking the “+” icon on the profile page, the form allows the user to add or edit a recipe, including adding an image to display on the recipe page and recipe card.
+- **Search Page** - A page that shows the user the site's available recipes, shown as recipe cards. If the user is logged in and their username matches user that created that card, an edit icon will be visible on the recipe card.
+- **Recipe Page** - A recipe page whose content changes with the recipe details of the chosen recipe. 
+- **Add/Edit Recipe Page** - A page designed to allow the user to add a recipe if logged in, and edit a recipe if they are logged in as the recipe's author. 
+- **Sign In Page** - A page designed to allow the user to log in using previously created user details; a username and a password.
+- **Sign Up Page** - A page designed to allow the user to create a user profile using a username and a password.
+
+### Features to Implement in the future
+- **Comments Section**
+     - This feature would have been used to allow users to comment on each others recipes and provide feedback to the author and future users.
+
+- **Further use of info modals**
+     - This feature would have been used to confirm that the user wished to go ahead with an action e.g. “Are you sure you want to log out?”
+
+- **Carousel Card Display**
+	- This feature would have been used on the home page so users could get an instant idea of the recipes on offer.
+- **Ability to create further categories by Admin**
+	- When mentally planning out this project, this feature was always going to be included but I simply ran out of time before submission date.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 The main features of the application are the following:
 
 - View full library of all recipes contained in the database.
