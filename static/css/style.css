@@ -3,7 +3,7 @@
 body {
   background-color: #212121;
 }
- .text-shadow {
+.text-shadow {
   text-shadow: 2px 2px 2px #464646;
 }
 
@@ -23,104 +23,101 @@ h6 {
   line-height: 1;
 }
 
- .logos {
+/*NavBar Logo*/
+.logos {
   font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
   font-size: 80px;
- }
-
+}
+/* search box*/
 .query {
   color:#fff
 }
 
-
- .icon-block {
-    padding: 0 15px;
-  }
-  .icon-block .material-icons {
-    font-size: inherit;
-  }
-
-  #index-text {
-    margin-top: 20vh;
-    
+/*profile page icons*/
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
 }
 
-  .index-hero {
-    background: url(../images/index_hero.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-  }
+#index-text {
+  margin-top: 20vh;
 
-  .recipe-hero {
-    background: url(../images/recipes-medpx.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    width: 100vw;
-    height: 100vh;
-  }
+}
 
-  .login-hero {
-    background: url(../images/flour_frame.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: local;
-    width: 100vw;
-    height: 80vh;
-  }
-/*
-  #login-form {
-    margin-top: auto;
-    padding-top: 20px;
-  }
+.index-hero {
+  background: url(../images/index_hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
 
-  /*colour of text*/
-  .tabs .tab a {
-    color: #f9660af3;
-    background-color: transparent;
+.recipe-hero {
+  background: url(../images/recipes-medpx.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-hero {
+  background: url(../images/flour_frame.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: local;
+  width: 100vw;
+  height: 80vh;
+}
+
+
+/*colour of text*/
+.tabs .tab a {
+  color: #f9660af3;
+  background-color: transparent;
 } 
-    /*Background and text color when a tab is active*/
+/*Background and text color when a tab is active*/
 .tabs .tab a.active {
-    background-color: transparent;
-    color: #f9660af3;
-    outline: none;
+  background-color: transparent;
+  color: #f9660af3;
+  outline: none;
 } 
 /*Background and text color on hover*/
 .tabs .tab a:hover {
-    background-color: transparent;
-    color: #f9660af3;
+  background-color: transparent;
+  color: #f9660af3;
 } 
- /*Color of underline*/
+/*Color of underline*/
 .tabs .indicator {
-    background-color: #f9660af3;
+  background-color: #f9660af3;
 }
 
 
 #table_border {
-border-bottom-color: #f29950;
-border-bottom-style: solid;
-border-bottom-width: 1px;
+  border-bottom-color: #f29950;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
 }
 
 #edit_container {
-padding:50px;
-border-radius: 2%;
-color: black;
+  padding:50px;
+  border-radius: 2%;
+  color: black;
 }
 
 #view_container{
-background-color: #ffffff;
-padding:50px;
-border-radius: 2%;
-width: 70%;
-margin: auto;
+  background-color: #ffffff;
+  padding:50px;
+  border-radius: 2%;
+  width: 70%;
+  margin: auto;
 }
 
 #recipe_css_image{
@@ -131,8 +128,8 @@ margin: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
- }
- 
+}
+
 /*Footer Social Links*/
 #social_row {
   margin-bottom: 0px;
@@ -140,7 +137,6 @@ margin: auto;
 }
 
 .social ul {
-  
   margin-top: 15px;
 }
 .social li {
@@ -148,43 +144,34 @@ margin: auto;
   padding: 2%;
   display: inline-block;
 }
- .social {
+.social {
   margin-top: 0px;
- }
- 
-
-
-
-@media screen and (min-width: 990px) {
-  
-
-  
 }
 
+
 @media screen and (max-width: 990px) {
-  #index-text {
-    margin-top: 30vh;
-    font-size: 20px;
-  }
+#index-text {
+  margin-top: 30vh;
+  font-size: 20px;
+}
 
-  #view_container {
-    padding: 0px;
-  }
+#view_container {
+  padding: 0px;
+}
 
-  
 }
 
 @media screen and (max-width: 600px) {
-  .login-hero{
-    background: none;
-    background-color: #212121;
-  }
-
-  #edit_container {
-    display: block;
-    padding:5px;
-    border-radius: 2%;
-    width: 100%;
-  }
+.login-hero{
+background: none;
+background-color: #212121;
 }
-  
+
+#edit_container {
+display: block;
+padding:5px;
+border-radius: 2%;
+width: 100%;
+}
+
+}
