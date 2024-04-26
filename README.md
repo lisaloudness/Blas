@@ -72,7 +72,7 @@ When the project’s initial planning began, informal discussions were held with
 
 ### Data Schema:
 
-The following shows the basic set-up data schemacof the MongoDB database:
+The following shows the basic set-up data schema of the MongoDB database:
 ![mongodb categories](/static/images/readme/mongo_schema.png)
 
 
@@ -91,6 +91,14 @@ The following shows the basic set-up data schemacof the MongoDB database:
 
 ## Features
 
+The main features of the application are the following:
+
+- View full library of all recipes contained in the database.
+- Search Function to allow users to search recipes containing specific ingredients.
+- Function to allow users to Reset the search function and return them to the full list of recipes
+- Registered users are allowed to edit only their own recipes.
+- Registered users are allowed to upload recipes to the website.
+- When adding new recipes / editing recipes users can also add New Categories.
 
  
 ### Home Page
