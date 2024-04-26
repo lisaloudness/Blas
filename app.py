@@ -189,7 +189,7 @@ def add_recipes():
         }
         mongo.db.recipes.insert_one(recipes)
         flash("Recipe Successfully Added")
-        return redirect(url_for("add_recipes"))
+        return redirect(url_for("profile", username=session["user"]))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     difficulty = mongo.db.difficulty.find().sort("difficulty_level", 1)
