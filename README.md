@@ -8,10 +8,9 @@
 3. [UX](#ux)
    - [User Demographic](#user-demographic)
    - [User Stories](#user-stories)
-4. [UI](#UI)
-   - [Layout](#layout)
-   - [Typography](#typography)
-   - [Color Scheme](#color-scheme)
+4. [UI](#ui)
+   - [Design](#design)
+   - [Features](#features)
 5. [Testing](#testing)  
 6. [Technologies Used](#technologies-used)
 7. [Deployment](#deployment)
@@ -63,7 +62,7 @@ When the project’s initial planning began, informal discussions were held with
 -	Users can easily navigate the main pages of the website from the homepage and fixed nav bar.	
 -	Users can search for recipes using keywords to quickly find specific recipes.
 -	Users can easily search the recipes without needing to register.
--   Users can easily search again or clear previous search
+-  Users can easily search again or clear previous search
 
 [Back to top](#blas-recipe-website)
 
@@ -73,23 +72,68 @@ When the project’s initial planning began, informal discussions were held with
 ### Data Schema:
 
 The following shows the basic set-up data schema of the MongoDB database:
+
+<details>
+<summary>The basic data schema set up of the MongoDB database</summary>
 ![mongodb categories](/static/images/readme/mongo_schema.png)
+</details>
+
+
 
 
 ### Wireframes / Mockups:
 
-- User Flowchart - [View](/static/images/readme/data_flow.png)
-- Home Page Wireframe - [View](/static/images/readme/home_wire.png)
-- Register Page Wireframe - [View](/)
-- Sign In Page Wireframe - [View](/)
-- Search Page Wireframe - [View](/static/images/readme/search_wire.png)
-- Search Results Page Wireframe - [View](/)
-- Profile Page Wireframe - [View]()
-- Add/Edit Page Wireframe - [View]()
+<details>
+<summary>User Flowchart</summary>
+![user flowchart](/static/images/readme/data_flow.png)
+</details>
+<details>
+<summary>Home Page Wireframe</summary>
+![Home Page Wireframe](/static/images/readme/home_wire.png)
+</details>
+<details>
+<summary>Search Page Wireframe</summary>
+![Search Page Wireframe](/static/images/readme/search_wire.png)
+</details>
+<details>
+<summary>User Flowchart</summary>
+![user flowchart](/static/images/readme/data_flow.png)
+</details>
+
 
 [Back to top](#blas-recipe-website)
 
-## Features
+## **UI**
+
+### Design
+
+#### Colour Scheme
+The developer chose to use a clean black and orange style page, with white text. This colour scheme was chosen as it’s quite modern and allows the colours from the hero image to be presented clearly and appear more attractive.
+
+The black and orange colouring gives a very clean and clear view of the site content. The dark background is easier on the eyes and reduces glare to the user.
+
+<details>
+<summary>Colour Palette</summary>
+
+![Colour Palette](/static/images/readme/blas_cooler.png)
+
+</details>
+
+
+#### Typography
+The font chosen for the logo was Courier New Bold as it is clear and concise, without any frills. This font was chosen as a representation of the site, showing clear concise recipes without all the added articles discussing each ingredient. This Logo was created using Pacifico font family.
+
+The fonts chosen for this site are Roboto, for the headings, and Open Sans, for all other text, as these are popular and clear fonts that work well with the design of the site. Both of their fonts were chosen from [Google Fonts](https://fonts.google.com/ 'Google Fonts Website').
+
+Roboto from Google Fonts was chosen as it is a clean and concise font. For the paragraph text, the font Open Sans from Google Fonts was chosen as it is a popular font that is also clean and concise.
+
+#### Imagery
+To match the colour scheme chosen, an image of some spices and utensils on a dark background was chosen. This image frames the title and opening text / button. On each recipe page, an image of the finished meal is shown with the recipe to allow the user to visualise the end product.
+
+[Back to top](#blas-recipe-website)
+
+
+## **Features**
 
 ### Design Features
 Each page of the website features a consistent responsive navigational system:
@@ -157,10 +201,18 @@ Each page of the website features a consistent responsive navigational system:
      </ul>
   </dd>
   
-  <dt><a href=" https://blas-8701405f8705.herokuapp.com/register" target="_blank" alt="Sign Up Page">Sign Up Page</a></dt>
+  <dt><a href="https://blas-8701405f8705.herokuapp.com/register" target="_blank" alt="Sign Up Page">Sign Up Page</a></dt>
   <dd>This page has a form allowing the user to enter their username and password to register an account:
      <ul>
           <li><strong>Sign In Form</strong> - This form has two input fields, username and password. A submit button at the end of the form login the user in if the information was correct and has not been used by other users previously, and redirects the user to their profile page.
+          </li>
+     </ul>
+  </dd>
+
+  <dt><a href="https://8080-lisaloudness-blas-udlva2oew1g.ws-eu110.gitpod.io/admin.html" target="_blank" alt="Admin Page">Admin Dashboard</a></dt>
+  <dd>This page has a form allowing the user to enter their username and password to register an account:
+     <ul>
+          <li><strong>Admin Dashboard</strong> - This page displays a library of all recipes available on the website.  When logged in as "Admin", the admin will have the ability to edit and delete all content on the website.
           </li>
      </ul>
   </dd>
@@ -177,8 +229,9 @@ Each page of the website features a consistent responsive navigational system:
 - **Add/Edit Recipe Page** - A page designed to allow the user to add a recipe if logged in, and edit a recipe if they are logged in as the recipe's author. 
 - **Sign In Page** - A page designed to allow the user to log in using previously created user details; a username and a password.
 - **Sign Up Page** - A page designed to allow the user to create a user profile using a username and a password.
+- **Admin Dashboard** - A page which allows administration of website content.
 
-### Features to Implement in the future
+### Features to Implement in the Future
 - **Comments Section**
      - This feature would have been used to allow users to comment on each others recipes and provide feedback to the author and future users.
 
@@ -187,83 +240,18 @@ Each page of the website features a consistent responsive navigational system:
 
 - **Carousel Card Display**
 	- This feature would have been used on the home page so users could get an instant idea of the recipes on offer.
+   
 - **Ability to create further categories by Admin**
 	- When mentally planning out this project, this feature was always going to be included but I simply ran out of time before submission date.
 
+- **Admin Account**
+   - Admin functionality would be a key value pair using, for example, a toggle switch for is_admin? or is_superuser therefore potentionally allowing more than one admin or superuser and not being reliant on an unique username.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The main features of the application are the following:
-
-- View full library of all recipes contained in the database.
-- Search Function to allow users to search recipes containing specific ingredients.
-- Function to allow users to Reset the search function and return them to the full list of recipes
-- Registered users are allowed to edit only their own recipes.
-- Registered users are allowed to upload recipes to the website.
-- When adding new recipes / editing recipes users can also add New Categories.
-
- 
-### Home Page
-
-### Recipes / Result Page
-
-### Login / Sign Up Page
-
-### Profile Page
-
-
-### Admin Page
-
-
-### Add Recipe Page
-
-### Edit Recipe Page
-
-The main features of the application are the following:
-
-- View full list of all recipes contained in the database
-- Search Function to allow users to search recipes containing specific ingredients.
-- Function to allow users to Reset the search function and return them to the full list of recipes
-- Registered users are allowed to edit only their own recipes.
-- Registered users are allowed to upload recipes to the website.
-- When adding new recipes / editing recipes users can also add New Categories.
+- **Wire Frames**
+   - I would include wireframes for all web pages on a variety of screen size.  I simply did not have enough time to incluse on this occasion.
 
 [Back to top](#blas-recipe-website)
 
-### Future Developments
-
-Ideally, User Registration would be used on such an application for the CRUD operations within the database.  This would require Account Authentication / Login functionaility also
-
-Full form validation would also be required to prevent users from ommiting required data.
-
-Admin functionality would be a key value pair using, for example, a toggle switch for is_admin? or is_superuser therefore potentionally allowing more than one admin or superuser and not being reliant on an unique username.
-
-When the responsiveness was tested on certain phones, the "Get Started" button on the Index page would not be displayed.
-
-Lastly, there were issues with using nested data within some records, which required a change of approach to the data schema.
-
-[Back to top](#blas-recipe-website)
 
 # Technologies Used
 
@@ -271,12 +259,19 @@ Lastly, there were issues with using nested data within some records, which requ
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
 - [Python](https://www.python.org/)
+- [Javascript](https://www.javascript.com/)
 
 
 ## Frameworks, Libraries & Programs Used
-[GitHub](https://github.com/) - Holds the repository of my project, GitHub connects to GitPod and Heroku.
+[Flask](https://flask.palletsprojects.com/en/3.0.x/) - Backend Python framework.
 
-[GitPod](https://gitpod.io/workspaces) – Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository. 
+[Jinja](https://flask.palletsprojects.com/en/3.0.x/templating/#jinja-setup) - used as template engine.
+
+[JQuery](https://jquery.com/) - Used to simplify DOM manipulation.
+
+[GitHub](https://github.com/) - GitHub was used to store the project after pushing from Gitpod. The deployed website also sourced it's code from here.
+
+[GitPod](https://gitpod.io/workspaces) – Cloud development area used for writing code, committing, and then pushing to GitHub
 
 [Heroku](https://www.heroku.com/) - Connected to the GitHub repository, Heroku is a cloud application platform used to deploy this project so the backend language can be utilised/tested. 
 
@@ -286,61 +281,31 @@ Lastly, there were issues with using nested data within some records, which requ
 
 [Bootstrap](https://getbootstrap.com/) - Used to quickly add design to my website, Bootstrap focuses on mobile first design meaning this website is responsive across multiple devices ans screen sizes. 
 
-[Cloudinary](https://cloudinary.com/?utm_source=google&utm_medium=cpc&utm_campaign=Rbrand&utm_content=492438439811&utm_term=cloudinary&gclid=Cj0KCQiAt8WOBhDbARIsANQLp96hTerzfFJ_P9lX0tEYEdtM3tSsYB6fhw-x3wQxOO0oc4hXm-A2ZBUaAptIEALw_wcB) - Used to store images online for the recipe posts. 
-
-[Summernote](https://summernote.org/) Used to add a text area field to the admin setup to enable a list of ingredients and method steps.
-
 [Google Fonts](https://fonts.google.com/https://fonts.google.com/) - provide fonts for the website.
 
 [Font Awesome](https://fontawesome.com/) -was used for icons.
 
 [Balsamiq](https://balsamiq.com/) - was used to create site wireframes.
 
-[Am I Responsive](http://ami.responsivedesign.is/) - to check if the site is responsive on different screen sizes.
+[Am I Responsive](http://ami.responsivedesign.is/) - was used to visualize the responsive deign throughout the project and also to generate Readme mockup images.
 
-[Pixabay](https://pixabay.com/) and [Unsplash](https://unsplash.com/) - were used for all the images
+[W3C Markup Validator](https://validator.w3.org/#validate_by_input) - used to validate HTML
 
-[W3C Markup Validator](https://validator.w3.org/#validate_by_input) - was used to validate HTML
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - used to validate CSS
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - was used to validate CSS
+[Beautify](https://www.jpkc.com/tools/beautify/) - used to format HTML and CSS files
 
-[Beautify](https://www.jpkc.com/tools/beautify/) - was used to correct indentation issues and get rid of too much whitespace - HTML, CSS
+[Coolors](https://coolors.co/9df57a-3c444c-fee73b-ff4f98-2daaf3-a9bedb) - used to generate color palette
 
-[Coolors](https://coolors.co/9df57a-3c444c-fee73b-ff4f98-2daaf3-a9bedb) - to make color palette
+[JSHint](https://jshint.com/) - used to validate javascript.
 
-
-
-## Technologies used
-
-Technologies used in this project include:
-
-* Materialize: Materializecss 
-* HTML5/CSS: Used for the layout and styling of the application.
-* Python 3.4.3: The back end functionality of the application was written entirely in python 3.0.
-* Flask Microframework: Flask was used to extend pythons functionality to the front end.
-* Balsamiq: Used to create the below wireframes.
-* Gitpod used as development environment workspace
-* The project uses **JQuery** to simplify DOM manipulation.
 
 [Back to top](#blas-recipe-website)
 
-## Testing
+## **Testing**
 
-Mainly manual testing used throughout - for routing and checking if data is properly rendered in the correct template and format, "test_app.py" was used, whereby on satisfactory completion, the clean functional code would then be transferred to the "app.py" file
-
-Basic testing included:
-
-- DB Connection
-- Editing Recipes
-- Adding Recipes
-- Adding new Categories / Main Ingredients / Cuisine Type
-- Rendering data / images
-
-Many GitHub commits will contain the prefix `TESTING`
-
-Pep 8 was used to assist with cleaning the data - indentation, whitespaces, non-spaces, 2 lines expected
-
-http://pep8online.com/
+All testing performed for Milestone Project 3 can be found here:
+[View Test Document here](/testing.md)
 
 [Back to top](#blas-recipe-website)
 
@@ -353,7 +318,7 @@ This website is deployed to Heroku from a GitHub repository, the following steps
 - Once the repository was created, I clicked the green **code** button and copied the HTTPS address. I then navigated to [Codeanywhere](https://app.codeanywhere.com/) and clicked on **New Workspace** to create a workspace in codeanywhere so that I could write the code for the site.
   
 #### Making a Local Clone
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/LHarveyDev/the-kitchen-cupboard)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/lisaloudness/Blas)
 2. Under the repository name, click "Clone or download".
 3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 4. Open Git Bash
@@ -361,13 +326,13 @@ This website is deployed to Heroku from a GitHub repository, the following steps
 6. Type `git clone`, and then paste the URL you copied in Step 3.
 
 ```
-$ git clone https://github.com/LHarveyDev/the-kitchen-cupboard
+$ git clone https://github.com/lisaloudness/Blas
 ```
 
 7. Press Enter. Your local clone will be created.
 
 ```
-$ git clone https://github.com/LHarveyDev/the-kitchen-cupboard
+$ git clone https://github.com/lisaloudness/Blas
 > Cloning into `CI-Clone`...
 > remote: Counting objects: 10, done.
 > remote: Compressing objects: 100% (8/8), done.
@@ -380,7 +345,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 #### Forking the Github Repository 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/LHarveyDev/the-kitchen-cupboard.git)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/lisaloudness/Blas)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
@@ -405,7 +370,7 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 |  PORT |    |
 |  SECRET_KEY   |     |
 
-Actual Enviroment variables not disclosed for security. They can be found in my env.py file which has been added to my .gitignore file within my project and therefore is not commited to github.
+Actual Enviroment variables not disclosed for security. They can be found in the env.py file which has been added to .gitignore file within my project and not commited to Github.
 
 [Back to top](#blas-recipe-website)
 

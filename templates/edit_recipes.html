@@ -4,7 +4,7 @@
 <div class="container fluid">
   <br>
   <h3 class="header center orange-text">{{ recipe.recipe_name }}</h3>
-  <h6 class="header center orange-text">To edit your recipe, please update the details below</h6>
+  <h5 class="header center orange-text">To edit your recipe, please update the details below</h5>
   <form  method="POST" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}">
     <div class="row card-panel" id="edit_container">
       <div class="row">
@@ -86,55 +86,55 @@
             
         
             <tbody id="table_border">
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_1" name="ingredient_1" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_1 }}">
                   <label for="ingredient_1"></label>
                 </td>
               </tr>
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_2" name="ingredient_2" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_2 }}">
                   <label for="ingredient_2"></label>
                 </td>
               </tr>
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_3" name="ingredient_3" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_3 }}">
                   <label for="ingredient_3"></label>
                 </td>
               </tr>
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_4" name="ingredient_4" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_4 }}">
                   <label for="ingredient_4"></label>
                 </td>
               </tr>
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_5" name="ingredient_5" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_5 }}">
                   <label for="ingredient_5"></label>
                 </td>
               </tr>
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_6" name="ingredient_6" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_6 }}">
                   <label for="ingredient_6"></label>
                 </td>
               </tr>
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_7" name="ingredient_7" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_7 }}">
                   <label for="ingredient_7"></label>
                 </td>
               </tr>
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_8" name="ingredient_8" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_8 }}">
                   <label for="ingredient_8"></label>
                 </td>
               </tr>
-              <tr class="col s12">
+              <tr>
                 <td>
                   <input id="ingredient_9" name="ingredient_9" type="text" class="materialize-textarea validate" value="{{ recipe.ingredient_9 }}">
                   <label for="ingredient_9"></label>
@@ -203,7 +203,7 @@
     <div class="col s12">
               
 <!-- Back to previous page Button -->
-      <a href="#" class="btn-floating btn-small tooltipped" onclick="history.back()" data-tooltip="Previous Page">
+      <a href="#" class="orange btn-floating btn-small tooltipped" onclick="history.back()" data-tooltip="Previous Page">
         <i class="fa-solid fa-circle-left left small"></i>
       </a>
       <!-- Edit Recipe Button -->

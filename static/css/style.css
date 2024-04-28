@@ -84,13 +84,13 @@ h6 {
 
 /*colour of text*/
 .tabs .tab a {
-  color: #f9660af3;
+  color: #f9660a;
   background-color: transparent;
 } 
 /*Background and text color when a tab is active*/
 .tabs .tab a.active {
   background-color: transparent;
-  color: #f9660af3;
+  color: #f9660a;
   outline: none;
 } 
 /*Background and text color on hover*/
@@ -114,10 +114,11 @@ h6 {
   padding:50px;
   border-radius: 2%;
   color: black;
+  background-color: #F7F3F3;
 }
 
 #view_container{
-  background-color: #ffffff;
+  background-color: #F7F3F3;
   padding:50px;
   border-radius: 2%;
   width: 70%;
@@ -170,6 +171,8 @@ h6 {
 background: none;
 background-color: #212121;
 }
+
+
 
 #edit_container {
 display: block;
