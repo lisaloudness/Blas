@@ -94,6 +94,7 @@ def login():
     return render_template("login.html")
 
 
+# Profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Ensure the user is logged in
@@ -114,6 +115,7 @@ def profile(username):
         "profile.html", username=username, recipes=user_recipes)
 
 
+# logout
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -121,12 +123,14 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Search Recipes
 @app.route("/get_recipes", methods=["GET"])
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
 
+# Search Function
 @app.route("/search", methods=["GET`", "POST"])
 def search():
     if request.method == "POST":
@@ -148,12 +152,14 @@ def search():
     return render_template("recipes.html", recipes=recipes, query=query)
 
 
+# show all recipes in databsase
 @app.route("/recipes", methods=["GET"])
 def show_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
 
+# add recipes
 @app.route("/add_recipes", methods=["GET", "POST"])
 def add_recipes():
     if request.method == "POST":
@@ -196,7 +202,7 @@ def add_recipes():
     return render_template(
         "add_recipes.html", categories=categories, difficulty=difficulty)
 
-
+# edit recipes
 @app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
 def edit_recipes(recipe_id):
     if request.method == "POST":
@@ -241,13 +247,13 @@ def edit_recipes(recipe_id):
     return render_template(
         "edit_recipes.html", recipe=recipe, categories=categories, difficulty=difficulty)
 
-
+# view recipes
 @app.route("/view_recipes/<recipe_id>", methods=["GET"])
 def view_recipes(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("view_recipes.html", recipe=recipe)
 
-
+# delete recipe
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     # Retrieve the recipe from the database
@@ -277,6 +283,13 @@ def delete_recipe(recipe_id):
 def admin():
     recipes = mongo.db.recipes.find()
     return render_template("admin.html", recipes=recipes)
+
+
+# Manage categories
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
 
 
 if __name__ == "__main__":

@@ -9,29 +9,28 @@
 
     <div class="container-fluid">
         <div class="row">
+            <!-- Search Box -->
             <div class="col s12 m6 offset-m3 l4 offset-l4">
                 <div class="searchbox center">
                     <form method="POST" action="{{ url_for('search') }}">
                         <button id="query" value="query" name="action" type="submit" class="btn-floating">
                             <i class="material-icons orange prefix">search</i>
                         </button>
-                            <input name="query" type="text" class="query center" placeholder="What are you looking for?" value="{{ query }}">
-                            <!-- Reset button to clear the search query -->
-                    {% if query %}
-                    <a href="{{ url_for('get_recipes') }}" class="btn-small orange">
-                        Show All Recipes
-                    </a>
-                {% endif %}
-
-                        </form>
+                        <input name="query" type="text" class="query center" placeholder="What are you looking for?" value="{{ query }}">
+                        <!-- Reset button to clear the search query -->
+                        {% if query %}
+                        <a href="{{ url_for('get_recipes') }}" class="btn-small orange">Show All Recipes</a>
+                        {% endif %}
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     
+    <!-- Recipe Card -->
         <div class="row">
             {% for recipe in recipes %}
-            <div class="col s12 m4 l3">
+            <div class="center col s12 m4 l3">
                 <div class="card medium">
                     <div class="card-image waves-effect waves-block waves-light">
                         {% if recipe.image %}

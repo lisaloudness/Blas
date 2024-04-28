@@ -10,12 +10,12 @@
 
 ## Table of Contents
 
-1. [Testing User Stories](#Testing-User_Stories)
-2. [Manual Testing](#Manual-Testing)
-3. [Automated Testing](#Automated-Testing)
-   - [Code Validation](#Code-Validation)
-   - [Browser Validation](#Browser-Validation)
-4. [User Testing](User-Testing)
+1. [Testing User Stories](#testing-user-stories)
+2. [Manual Testing](#manual-testing)
+3. [Automated Testing](#automated-testing)
+   - [Code Validation](#code-validation)
+   - [Browser Validation](#browser-validation)
+4. [User Testing](#user-testing)
 
 </br>
 
@@ -115,15 +115,22 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate th
 
 [Edit Recipe Page - W3C Markup Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fblas-8701405f8705.herokuapp.com%2Fedit_recipes%2F661fc83da2f6bb40d70f7418) - No error detected.
 
+[JSHint](https://jshint.com/) - JSHint was used to validate the javascript code. No errors detected.
+
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - There were no error detected.
-![CSS Validator, no error detected](/static/images/readme/CSS_validation.png/ "CSS Validation, no error detected")
+<details>
+<summary>CSS Validator</summary>
+![CSS Validator](/static/images/readme/CSS_validation.png)
+</details>
+<br>
 
-The CI Python Linter was used to format and validate the python code to PEP8 standards.
-[CI Python Linter](https://pep8ci.herokuapp.com/#) - No errors detected.
-![CI Python Linter, no error detected](/static/images/readme/CI_python_linter.png/ "CI Python Linter, no error detected")
+[CI Python Linter](https://pep8ci.herokuapp.com/#) - The CI Python Linter was used to format and validate the python code to PEP8 standards. No Errors detected.
+<details>
+<summary>CI Python Linter</summary>
+![CI Python Linter](/static/images/readme/CI_python_linter.png/)
+</details>
+<br>
 
-JSHint was used to validate the javascript code.
-[JSHint](https://jshint.com/) - No errors detected.
 
 
 ## **Browser Validation**
