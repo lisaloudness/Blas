@@ -300,7 +300,6 @@ def add_category():
             "category_name": request.form.get("category_name")
         }
         mongo.db.categories.insert_one(category)
-        flash("New Category Added")
         return redirect(url_for("get_categories"))
 
     return render_template("categories.html")
@@ -317,8 +316,7 @@ def edit_category(category_id):
         return redirect(url_for("get_categories"))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("categories.html", category=category)
-
+    return render_template("edit_categories.html", category=category)
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
