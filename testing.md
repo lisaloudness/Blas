@@ -23,11 +23,16 @@
 
 1. As an administrator of the site, I have the ability to create, modify and delete recipes to effectively manage the content.
 2. As an administrator of the site, I can log out from the admin panel to disconnect from the website.
+3. As an administrator of the site, I can manage categories.
+4. As an administrator of the site, I can manage users.
 
    - When logged in as "Admin", the user has elevated rights to add, edit and delete all recipe content on the site.
    - When logged in as "Admin", the user is directed to an admin dashboard rather than user profile. The Admin Dashboard displays all recipes which are stored in the database.
    - The recipe cards displayed in the Admin Dashboard have prominent edit and delete function buttons.
    - When logged in as "Admin", the user can log out at any time by selecting the Log Out option which is displayed on the fixed navbar and only visible when an user is in session.
+   - From the admin dashboard, "Admin" can navigate to Manage Categories Page. Here "Admin" can add new categories and delete existing categories.
+   - From the admin dashboard, "Admin" can navigate to Manage Users Page. Here "Admin" can delete existing users.
+
 
 
 
@@ -169,14 +174,30 @@ The Chrome Light House test was used to audit the performance, accessibility, be
    - ![Mobile Gallery Page Results](/static/images/readme/signup_mobile.png "Light House mobile results")
 
 
+5. Admin Dashboard page
+   - Desktop [Full report can be found here](/static/documentation/admin_lighthouse.html)
+   - ![Desktop Gallery Page Results](/static/images/readme/admin_lighthouse.png "Light House Desktop Results")
+
+   - Mobile [Full report can be found here](/static/documentation/admin_mobile_lighthouse.html)
+   - ![Mobile Gallery Page Results](/static/images/readme/admin_mobile_lh.png "Light House mobile results")
+
+
+6. Manage Categories page
+   - Desktop [Full report can be found here](/static/documentation/manage_categories_lighthouse.html)
+   - ![Desktop Gallery Page Results](/static/images/readme/manage_cat_lighthouse.png "Light House Desktop Results")
+
+   - Mobile [Full report can be found here](/static/documentation/manage_cat_moile.html)
+   - ![Mobile Gallery Page Results](/static/images/readme/manage_cat_mobile.png "Light House mobile results")
+
+
 [Back to top](#blas-test-document)
 </br>
 
 
 ## **User Testing**
 
-The website was shared with family and colleagues for their valued feedback. Common issues noted in the feedback were fixed
-- The social media icons for Instagram and Twitter were in the wrong place.
+The website was shared with family and colleagues for their valued feedback.
+- More use could have been made of tooltipped instructions.
 - Overall functionality of the site works well.
 - The background photos appear zoomed on IOS devices.  This is a known bug of background-attachment-fixed style on IOS.
 - Styling could be improved in terms of positioning on the page.

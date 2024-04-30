@@ -49,12 +49,15 @@ When the project’s initial planning began, informal discussions were held with
 
 -	As an administrator of the site, I have the ability to create, modify and delete recipes to effectively manage the content.
 -	As an administrator of the site, I can log out from the admin panel to disconnect from the website.
+-  As an administrator of the site, I can manage categories.
+-  As an administrator of the site, I can manage users.
 
 #### Epic: Registered Users
 -	As a logged-in user, I can publish recipes for others to see.
 -	As a logged-in user, I have the ability to delete my own recipes.
 -	As a logged-in user, I can edit recipes to make updates or correct errors.
 -	As a logged-in user, I can upload images alongside my recipe for others to view the dish.
+
 #### Epic: Login / Register
 -	Users can register for an account to engage with the sites content.
 -	Users can log in or out of their accounts to connect or disconnect from the website.
@@ -94,8 +97,8 @@ The following shows the basic set-up data schema of the MongoDB database:
 ![Search Page Wireframe](/static/images/readme/search_wire.png)
 </details>
 <details>
-<summary>User Flowchart</summary>
-![user flowchart](/static/images/readme/data_flow.png)
+<summary>Admin Dashboard</summary>
+![admin dashboard](/static/images/readme/admin_wireframe.png)
 </details>
 
 [Back to top](#blas-recipe-website)
@@ -161,7 +164,7 @@ Each page of the website features a consistent responsive navigational system:
       </ul>
    </dd>
 
-   <dt><a href="https://8080-lisaloudness-blas-udlva2oew1g.ws-eu110.gitpod.io/view_recipes/6617e2e2c4ee9a40c5af29ac" target="_blank" alt="View Recipe">View Recipe Page</a></dt>
+   <dt><a href="https://blas-8701405f8705.herokuapp.com/view_recipes/6617e2e2c4ee9a40c5af29ac" target="_blank" alt="View Recipe">View Recipe Page</a></dt>
    <dd>
       <ul>
          <li><strong>Featured Image</strong> - The featured image shows the image the user uploaded, or the stock placeholder image if no image was uploaded by the user.
@@ -203,10 +206,26 @@ Each page of the website features a consistent responsive navigational system:
       </ul>
    </dd>
 
-   <dt><a href="https://8080-lisaloudness-blas-udlva2oew1g.ws-eu110.gitpod.io/admin.html" target="_blank" alt="Admin Page">Admin Dashboard</a></dt>
+   <dt><a href="https://blas-8701405f8705.herokuapp.com/admin.html" target="_blank" alt="Admin Page">Admin Dashboard</a></dt>
    <dd>This page has a form allowing the user to enter their username and password to register an account:
       <ul>
          <li><strong>Admin Dashboard</strong> - This page displays a library of all recipes available on the website.  When logged in as "Admin", the admin will have the ability to edit and delete all content on the website.
+         </li>
+      </ul>
+   </dd>
+
+   <dt><a href="https://blas-8701405f8705.herokuapp.com/get_categories" target="_blank" alt="Manage Categories">Manage Categories</a></dt>
+   <dd>Accessible from the Admin dashboard, this page is an extension of the admin dashboard with further administration capabilities.
+      <ul>
+         <li><strong>Manage Categories</strong> - This page displays a library of all categories on the website.  When logged in as "Admin", the admin will have the ability to add and delete categories.
+         </li>
+      </ul>
+   </dd>
+
+   <dt><a href="https://blas-8701405f8705.herokuapp.com/get_users" target="_blank" alt="Manage Users">Manage Users</a></dt>
+   <dd>Accessible from the Admin dashboard, this page is an extension of the admin dashboard with further administration capabilities.
+      <ul>
+         <li><strong>Manage Categories</strong> - This page displays a library of all users on the website.  When logged in as "Admin", the admin will have the ability to delete users.
          </li>
       </ul>
    </dd>
@@ -225,6 +244,8 @@ Each page of the website features a consistent responsive navigational system:
 - **Sign In Page** - A page designed to allow the user to log in using previously created user details; a username and a password.
 - **Sign Up Page** - A page designed to allow the user to create a user profile using a username and a password.
 - **Admin Dashboard** - A page which allows administration of website content.
+- **Manage Categories** - A page which allows logged in "Admin" to add new categories and delete existing categories.
+- **Manage Users** - A page which allows logged in "Admin" to delete users from the database.
 
 ### Features to Implement in the Future
 
