@@ -228,6 +228,9 @@ Each page of the website features a consistent responsive navigational system:
 
 ### Features to Implement in the Future
 
+- **Security Features**
+   - Currently the website has very poor security features. To keep usernames and passwords simple during the build process, input requirements were kept short and simple. In future deployments I would enhance the password security to minimum of 10 characters, to include letters and numbers.
+
 - **Comments Section**
      - This feature would have been used to allow users to comment on each others recipes and provide feedback to the author and future users.
 

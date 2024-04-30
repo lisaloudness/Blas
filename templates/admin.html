@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <br>
         <h3 class="center orange-text"><strong>Welcome to Admin Dashboard</strong></h3>
-        <p class="strong center white-text"><strong>Here you can add, edit and delete all recipes</strong></p>
+        <p class="strong center white-text"><strong>Here you can manage all recipes, categores and users.</strong></p>
     </div>
     
     <!--   Icon Section   -->
@@ -31,8 +31,10 @@
   
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center orange-text"><i class="fa fa-trash" aria-hidden="true"></i></h2>
-          <h5 class="center white-text">Delete Recipes</h5>
+          <a href="{{ url_for('get_users') }}">
+          <h2 class="center orange-text"><i class="fa-solid fa-user" aria-hidden="true"></i></h2>
+          <h5 class="center white-text">Manage Users</h5>
+          </a>
         </div>
       </div>
     </div>

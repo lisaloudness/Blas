@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h3 class="header center orange-text">Manage Users</h3>
+
+  <div class="row">
+    {% for users in users %}
+      <div class="col s12 m3">
+        <div class="card orange darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><strong>{{ users.username }}</strong></span>
+            <div class="card-action">
+              <a href="{{ url_for('delete_users', users_id=users._id) }}" class="waves-effect orange darken-4 btn-small"><i class="material-icons left">delete</i>Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}      
+  </div>
+  
+  <div class="row center">
+  <a href="{{ url_for('admin')}}" class="waves-effect waves-light btn-large"><i class="fa fa-arrow-circle-left"></i><strong>  Back To Admin Dashboard</strong></a>
+  </div>
+
+</div>
+ 
+
+      
+{% endblock %}
