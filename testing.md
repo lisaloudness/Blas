@@ -120,6 +120,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate th
 
 [Edit Recipe Page - W3C Markup Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fblas-8701405f8705.herokuapp.com%2Fedit_recipes%2F661fc83da2f6bb40d70f7418) - No error detected.
 
+[Manage Categories - W3 Marup Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fblas-8701405f8705.herokuapp.com%2Fget_categories) - No error detected.
+
 [JSHint](https://jshint.com/) - JSHint was used to validate the javascript code. No errors detected.
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - There were no error detected.
