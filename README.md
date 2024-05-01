@@ -79,6 +79,7 @@ The following shows the basic set-up data schema of the MongoDB database:
 
 <details>
 <summary>The basic data schema set up of the MongoDB database</summary>
+
 ![mongodb categories](/static/images/readme/mongo_schema.png)
 </details>
 
@@ -86,18 +87,22 @@ The following shows the basic set-up data schema of the MongoDB database:
 
 <details>
 <summary>User Flowchart</summary>
+
 ![user flowchart](/static/images/readme/data_flow.png)
 </details>
 <details>
 <summary>Home Page Wireframe</summary>
+
 ![Home Page Wireframe](/static/images/readme/home_wire.png)
 </details>
 <details>
 <summary>Search Page Wireframe</summary>
+
 ![Search Page Wireframe](/static/images/readme/search_wire.png)
 </details>
 <details>
 <summary>Admin Dashboard</summary>
+
 ![admin dashboard](/static/images/readme/admin_wireframe.png)
 </details>
 
@@ -115,6 +120,7 @@ The black and orange colouring gives a very clean and clear view of the site con
 
 <details>
 <summary>Colour Palette</summary>
+
 ![Colour Palette](/static/images/readme/blas_cooler.png)
 </details>
 
@@ -247,10 +253,16 @@ Each page of the website features a consistent responsive navigational system:
 - **Manage Categories** - A page which allows logged in "Admin" to add new categories and delete existing categories.
 - **Manage Users** - A page which allows logged in "Admin" to delete users from the database.
 
-### Features to Implement in the Future
+### Future Development Features
 
 - **Security Features**
    - Currently the website has very poor security features. To keep usernames and passwords simple during the build process, input requirements were kept short and simple. In future deployments I would enhance the password security to minimum of 10 characters, to include letters and numbers.
+
+- **Session Cookie Expiration**
+   - The session cookie would be set to expire after an indicated time of inactivity. This would automatically log out the user after a period of inactivity.
+
+- **Dynamic Method Fields**
+   - On the Add Recipes form I would create the add method fields to be dynamic, as the ingredients.  
 
 - **Comments Section**
      - This feature would have been used to allow users to comment on each others recipes and provide feedback to the author and future users.
@@ -337,7 +349,7 @@ This website is deployed to Heroku from a GitHub repository, the following steps
 #### Creating a Repository on GitHub
 - First make sure you are signed into [Github](https://github.com/) and go to the code institutes template, which can be found [here](https://github.com/Code-Institute-Org/ci-mongo-template).
 - Then click on **use this template** and select **Create a new repository** from the drop-down. Enter the name for the repository and click **Create repository**.
-- Once the repository was created, I clicked the green **code** button and copied the HTTPS address. I then navigated to [Codeanywhere](https://app.codeanywhere.com/) and clicked on **New Workspace** to create a workspace in codeanywhere so that I could write the code for the site.
+- Once the repository was created, I clicked the green **code** button and copied the HTTPS address. I then navigated to [Gitpod](https://gitpod.io/workspaces/) and clicked on **New Workspace** to create a workspace.
   
 #### Making a Local Clone
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/lisaloudness/Blas)
@@ -377,8 +389,8 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 - Give the app a name(this must be unique) and select a **region** I chose **Europe** as I am in Europe, Then click **Create app**.
 
 #### Deploying to Heroku.
-- In Codeanywhere CLI, the root directory of the project, run: pip3 freeze --local > requirements.txt to create a requirements.txt file containing project dependencies.
-- In the Codeanywhere project workspace root directory, create a new file called Procfile, with capital 'P'. Open the Procfile. - Inside the file, check that web: python3 app.py has been added when creating the file Save the file.
+- In Gitpod, the root directory of the project, run: pip3 freeze --local > requirements.txt to create a requirements.txt file containing project dependencies.
+- In the Gitpod project workspace root directory, create a new file called Procfile, with capital 'P'. Open the Procfile. - Inside the file, check that web: python3 app.py has been added when creating the file Save the file.
 - Push the 2 new files to the GitHub repository
 - Login to Heroku, select Create new app, add the name for your app and choose your closest region.
 - Navigate to the Deploy tab on Heroku dashboard and select Github, search for your repository and click 'connect'.
@@ -405,7 +417,7 @@ Actual Enviroment variables not disclosed for security. They can be found in the
 - Code Institute's Task Manager project walkthrough. Used to create the search function [Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
 - The Flask documentation was referred to throughout the project [Flask documentation](https://flask.palletsprojects.com/en/3.0.x/)
 - The Materialize documentation was used to create the various components.
-- I also used Slack to view other students work in the project-milestone-3 and peer-code-review channels
+- Slack was used to view other students work in the project-milestone-3 and peer-code-review channels.
 
 ### Content
 
@@ -418,8 +430,7 @@ Actual Enviroment variables not disclosed for security. They can be found in the
 ### Acknowledgements
 
 - I received inspiration for this project from https://www.bbcgoodfood.com
-- I would like to thank
+- I would like to thank my son for testing the website on his android mobile phone and feedback on the recipes he will be trying to cook!.
 
-### Personal Summary
 
 [Back to top](#blas-recipe-website)

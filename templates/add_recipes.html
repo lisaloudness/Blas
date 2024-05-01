@@ -26,24 +26,26 @@
           </div>
         </div>
         <div class="row">
-
+          <!-- prep time field - type=text as to put min -->
           <div class="input-field col s6 m3 l3">
             <i class="material-icons prefix">timer</i>
               <input class="materialize-textarea validate" type="text" id="prep_time" name="prep_time">
                 <label for="prep_time">Prep Time</label>
           </div>
-    
+    <!-- cook time field - type=text as to put min -->
           <div class="input-field col s6 m3 l3">
             <i class="material-icons prefix">timer</i>
               <input class="materialize-textarea validate" type="text" id="cook_time" name="cook_time">
                 <label for="cook_time">Cook Time</label>
           </div>
+          <!-- serves - type-number-->
           <div class="input-field col s6 m3 l3">
             <i class="material-icons prefix">sort</i>
               <input id="serves" name="serves" minlength="1" maxlength="2"
-                type="text" class="materialize-textarea validate" required>  
+                type="number" class="materialize-textarea validate" required>  
               <label for="serves">Serves</label>
           </div> 
+          <!-- difficulty level dropdown -->
           <div class="input-field col s6 m3 l3">
             <i class="material-icons prefix">star</i>
             <select id="difficulty_level" name="difficulty_level" class="materialize-textarea validate" required>
@@ -96,86 +98,85 @@
                 </tr>
               </tbody>
             </table>
-        </div>
+          </div>
 
-        <div id="tab2" class="col s12">
-          <blockquote><strong>Method:</strong></blockquote>
-            <table class="striped">
-              <tbody>
-                <tr>
-                  <td><strong>Step 1: </strong><br>
-                    <input id="method_1" name="method_1" type="text" class="materialize-textarea validate">
-                      <label for="method_1"></label>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Step 2: </strong><br>
-                    <input id="method_2" name="method_2" type="text" class="materialize-textarea validate">
-                      <label for="method_2"></label>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Step 3: </strong><br>
-                    <input id="method_3" name="method_3" type="text" class="materialize-textarea validate">
-                      <label for="method_3"></label>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Step 4: </strong><br>
-                    <input id="method_4" name="method_4" type="text" class="materialize-textarea validate">
-                    <label for="method_4"></label>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Step 5: </strong><br>
-                    <input id="method_5" name="method_5" type="text" class="materialize-textarea validate">
-                    <label for="method_5"></label>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Step 6: </strong><br>
-                    <input id="method_6" name="method_6" type="text" class="materialize-textarea validate">
-                    <label for="method_6"></label>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Step 7: </strong><br>
-                    <input id="method_7" name="method_7" type="text" class="materialize-textarea validate">
-                    <label for="method_7"></label>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Step 8: </strong><br>
-                    <input id="method_8" name="method_8" type="text" class="materialize-textarea validate">
-                    <label for="method_8"></label>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-        </div>
+          <div id="tab2" class="col s12">
+            <blockquote><strong>Method:</strong></blockquote>
+              <table class="striped">
+                <tbody>
+                  <tr>
+                    <td><strong>Step 1: </strong><br>
+                      <input id="method_1" name="method_1" type="text" class="materialize-textarea validate">
+                        <label for="method_1"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Step 2: </strong><br>
+                      <input id="method_2" name="method_2" type="text" class="materialize-textarea validate">
+                        <label for="method_2"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Step 3: </strong><br>
+                      <input id="method_3" name="method_3" type="text" class="materialize-textarea validate">
+                        <label for="method_3"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Step 4: </strong><br>
+                      <input id="method_4" name="method_4" type="text" class="materialize-textarea validate">
+                      <label for="method_4"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Step 5: </strong><br>
+                      <input id="method_5" name="method_5" type="text" class="materialize-textarea validate">
+                      <label for="method_5"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Step 6: </strong><br>
+                      <input id="method_6" name="method_6" type="text" class="materialize-textarea validate">
+                      <label for="method_6"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Step 7: </strong><br>
+                      <input id="method_7" name="method_7" type="text" class="materialize-textarea validate">
+                      <label for="method_7"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Step 8: </strong><br>
+                      <input id="method_8" name="method_8" type="text" class="materialize-textarea validate">
+                      <label for="method_8"></label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
           
-        <!-- recipe url input field-->
-        <div class="input-field col s12">
-          <i class="far fa-images prefix"></i>
-            <input id="image" name="image" class="responsive-img" type="url" pattern="https://.*" size="30">
-              <label for="image">Recipe Image URL
-                <i class="fas fa-question-circle tooltipped" data-position="top"
-                  data-tooltip="You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here"></i>
-              </label>
+          <!-- recipe url input field-->
+          <div class="input-field col s12">
+            <i class="far fa-images prefix"></i>
+              <input id="image" name="image" class="responsive-img" type="url" pattern="https://.*" size="30">
+                <label for="image">Recipe Image URL
+                  <i class="fas fa-question-circle tooltipped" data-position="top"
+                    data-tooltip="You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here"></i>
+                </label>
+          </div>
         </div>
-
         <!-- Add Recipe Button -->
         <div class="row">
           <div class="col s12 center">
             <button type="submit" class="btn-large waves-effect waves-light orange">Add Recipe  <i class="fas fa-plus-square"></i></button>
           </div>
         </div>
-        </div>
+        
       </div>
     </form>
     <br>
 </div>
-
 </div>
 {%- endblock -%}
 

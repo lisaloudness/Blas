@@ -16,6 +16,7 @@
    - [Code Validation](#code-validation)
    - [Browser Validation](#browser-validation)
 4. [User Testing](#user-testing)
+5. [Bugs and Issues](#bugs-and-issues)
 
 </br>
 
@@ -205,3 +206,5 @@ The website was shared with family and colleagues for their valued feedback.
 - Styling could be improved in terms of positioning on the page.
 
 
+## **Bugs and Issues**
+- There were no known bugs or issues found at time of testing.
